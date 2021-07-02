@@ -13,13 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: sfall
-email: your-email@example.com
+title: sfall - Scripting
+email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Sfall documentation
-baseurl: "" # the subpath of your site, e.g. /blog
+  sfall functions documentation
+baseurl: "/sfall-wiki" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: BGforgeNet
+github_username:
 
 # Build settings
 markdown: kramdown
@@ -49,9 +49,9 @@ aux_links:
     "Forum":
       - "https://nma-fallout.com/threads/fo2-engine-tweaks-sfall.178390/"
     "GitHub":
-      - "https://github.com/phobos2077/sfall/"
+      - "https://github.com/FakelsHub/sFall-Extended"
 
-jekyll_analytics:
-  Matomo:
-    url: st.bgforge.net
-    siteId: "16"
+#jekyll_analytics:
+#  Matomo:
+#    url: st.bgforge.net
+#    siteId: "16"
