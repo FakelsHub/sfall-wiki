@@ -629,161 +629,161 @@
     "url": "/sfall-wiki/knockback/#functions",
     "relUrl": "/knockback/#functions"
   },"105": {
-    "doc": "Lists",
-    "title": "Lists",
-    "content": "The list_xxx functions can be used to loop over all items on a map. list_begin takes an argument telling sfall what you want to list. (Defined in sfall.h) It returns a list pointer, which you iterate through with list_next. Finally, when you’ve finished with the list use list_end on it. Not calling list_end will result in a memory leak. Alternatively, use list_as_array to get the whole list at once as a temp array variable, which can be looped over using len_array and which you don’t need to remember to free afterwards. ",
-    "url": "/sfall-wiki/lists/",
-    "relUrl": "/lists/"
-  },"106": {
-    "doc": "Lists",
-    "title": "Functions",
-    "content": ". | list_as_array | list_begin | list_end | list_next | party_member_list | . list_as_array . array list_as_array(int type) . list_begin . int list_begin(int type) . list_end . void list_end(int listid) . list_next . int list_next(int listid) . party_member_list . array party_member_list(int includeHidden) . Returns an array of all current party members (0 - only critter-type, alive and visible will be returned, 1 - all object, including Trunk, etc.) . ",
-    "url": "/sfall-wiki/lists/#functions",
-    "relUrl": "/lists/#functions"
-  },"107": {
     "doc": "Locks",
     "title": "Locks",
     "content": " ",
     "url": "/sfall-wiki/locks/",
     "relUrl": "/locks/"
-  },"108": {
+  },"106": {
     "doc": "Locks",
     "title": "Functions",
     "content": ". | lock_is_jammed | set_unjam_locks_time | unjam_lock | . lock_is_jammed . sfall.h . bool lock_is_jammed(ObjectPtr obj) . Returns 1 if the lock (container or scenery) is currently jammed, 0 otherwise. set_unjam_locks_time . sfall.h . void set_unjam_locks_time(int time) . Sets after how many hours (up to 127 hours) jammed locks will be unjammed if the player leaves the map. Also disables the auto unjam that occurs at midnight when the player is on the map. Passing 0 will disable the auto unjam mechanism completely. The auto unjam mechanism will be reset each time the player reloads the game. unjam_lock . sfall.h . void unjam_lock(ObjectPtr obj) . Unjams a lock immediately without having to wait until the next day, or leave the map and then return after 24 hours. Does not work in use_skill_on_p_proc procedure. ",
     "url": "/sfall-wiki/locks/#functions",
     "relUrl": "/locks/#functions"
-  },"109": {
+  },"107": {
     "doc": "Main interface",
     "title": "Main interface",
     "content": " ",
     "url": "/sfall-wiki/main-interface/",
     "relUrl": "/main-interface/"
-  },"110": {
+  },"108": {
     "doc": "Main interface",
     "title": "Functions",
     "content": ". | intface_hide | intface_is_hidden | intface_redraw | intface_show | . intface_hide . sfall.h . void intface_hide() . Hides main interface. intface_is_hidden . sfall.h . bool intface_is_hidden() . Returns 1 if interface is currently hidden, 0 otherwise. intface_redraw . sfall.h . void intface_redraw(bool winType) . Redraws main game interface. Useful after direct changes to current player weapons or stats to reflect changes. | redraws main game interface, useful to reflect changes after directly changing current player weapons or stats | winType: the type number of the interface window (see WINTYPE_* constants in sfall.h). Pass -1 to redraw all interface windows. | . intface_show . sfall.h . void intface_show() . Shows main interface. ",
     "url": "/sfall-wiki/main-interface/#functions",
     "relUrl": "/main-interface/#functions"
-  },"111": {
+  },"109": {
     "doc": "Maps and encounters",
     "title": "Maps and encounters",
     "content": " ",
     "url": "/sfall-wiki/maps-and-encounters/",
     "relUrl": "/maps-and-encounters/"
-  },"112": {
+  },"110": {
     "doc": "Maps and encounters",
     "title": "Subcategories",
     "content": ". | Rest | Worldmap | . ",
     "url": "/sfall-wiki/maps-and-encounters/#subcategories",
     "relUrl": "/maps-and-encounters/#subcategories"
-  },"113": {
+  },"111": {
     "doc": "Maps and encounters",
     "title": "Functions",
     "content": ". | exec_map_update_scripts | force_encounter | force_encounter_with_flags | get_map_enter_position | in_world_map | set_map_enter_position | set_map_time_multi | set_terrain_name | set_town_title | . exec_map_update_scripts . sfall.h . void exec_map_update_scripts() . Executes map_update_p_proc for all objects on map and global/hook scripts as well. force_encounter . void force_encounter(int map) . Can be called either from a global script while traveling on the world map, or from a normal script while on a local map. In either case the encounter occurs shortly after the next time the player moves on the world map. The player will not get an outdoorsman skill check. force_encounter_with_flags . void force_encounter_with_flags(int map, int flags) . Does the same thing as force_encounter, but allows the specification of some extra options (see sfall.h for available flags). Forcing a random encounter on a map that is not normally used for random encounters may cause the player to lose the car, if they have it. In this case use force_encounter_with_flags with the ENCOUNTER_FLAG_NO_CAR flag set. get_map_enter_position . array get_map_enter_position() . Returns an array of the player’s position data (index: 0 - tile, 1 - elevation, 2 - rotation) when entering the map through exit grids. If entering from the world map, the tile value will be -1. Should be called in map_enter_p_proc procedure to get the correct position data. in_world_map . bool in_world_map . Returns 1 if the player is looking at the world map, or 0 at any other time. Obviously this is only useful in global scripts, since normal scripts will never get the chance to run on the world map. set_map_enter_position . void set_map_enter_position(int tile, int elevation, int rotation) . Overrides the players entry position when entering the map through exit grids. Setting the tile to 0 will put the player on the start hex (default tile and elevation) of the map. Works only in map_enter_p_proc procedure. set_map_time_multi . void set_map_time_multi(float multi) . Adjusts how fast time passes while you’re on the world map. It takes a single float as an argument, where 1 is the normal speed. This function works in addition to the WorldMapTimeMod setting in ddraw.ini and the Pathfinder perk, rather than overriding it, so calling set_map_time_multi(0.5) when the player has 2 levels of Pathfinder would result in time passing at 25% the normal speed on the world map. set_terrain_name . void sfall_func3(\"set_terrain_name\", int x, int y, string name) . Overrides the terrain type name for the sub-tile on the world map by the specified coordinates. set_town_title . void sfall_func2(\"set_town_title\", int areaID, string title) . Sets a floating text for a town on the world map when hovering the cursor over the player’s marker. - areaID: the ID number of the town from city.txt . ",
     "url": "/sfall-wiki/maps-and-encounters/#functions",
     "relUrl": "/maps-and-encounters/#functions"
-  },"114": {
+  },"112": {
     "doc": "Math",
     "title": "Math",
     "content": " ",
     "url": "/sfall-wiki/math/",
     "relUrl": "/math/"
-  },"115": {
+  },"113": {
     "doc": "Math",
     "title": "Functions",
     "content": ". | ^ | abs | arctan | ceil | cos | div | exponent | floor2 | log | round | sin | sqrt | tan | . ^ . x^y . Exponentiation. Use as any other arithmetic operator, like 5^(1/3). If exponent is an integer, you can use a negative base, otherwise you will get “NaN” with a negative base. If both arguments are integers, the result will be an integer. abs . int/float abs(int/float x) . Absolute (positive) value of x. arctan . float arctan(float x, float y) . Arctangent of x. Pass 1 as y (don’t ask…). ceil . int ceil(float) . Round x to the nearest integer that is not less than x. cos . float cos(float x) . Cosine of x . div . div(x, y) . Unsigned integer division. Use as a division operator, like 3 + (20 div 5). If both dividend and divisor are integers, they will be treated as unsigned integers. If one of them is a float, div will perform the signed division just like vanilla division operator. exponent . float exponent(float x) . E^X . floor2 . sfall.h . int floor2(int/float value) . Works just like vanilla floor function, but returns correct integers for negative values (vanilla floor function works exactly the same as ceil for negative values, much like trunc in C/C++). log . float log(float x) . Natural logarithm of x. round . int round(float x) . Round x to the nearest integer. sin . float sin(float x) . Sine of x . sqrt . float sqrt(float x) . Square root of x. tan . float tan(float x) . Tangent of x . ",
     "url": "/sfall-wiki/math/#functions",
     "relUrl": "/math/#functions"
-  },"116": {
+  },"114": {
     "doc": "NPC perks",
     "title": "NPC perks",
     "content": "These functions are similar to has_fake_*/set_fake_*/set_selectable_perk functions, but apply to the specified party member NPC (including dude_obj) . ",
     "url": "/sfall-wiki/npc-perks/",
     "relUrl": "/npc-perks/"
-  },"117": {
+  },"115": {
     "doc": "NPC perks",
     "title": "Functions",
     "content": ". | has_fake_perk_npc | has_fake_trait_npc | set_fake_perk_npc | set_fake_trait_npc | set_selectable_perk_npc | . has_fake_perk_npc . sfall.h . int has_fake_perk_npc(object npc, string namePerk) . has_fake_trait_npc . sfall.h . int has_fake_trait_npc(object npc, string nameTrait) . set_fake_perk_npc . sfall.h . void set_fake_perk_npc(object npc, string namePerk, int level, int image, string desc) . set_fake_trait_npc . sfall.h . void set_fake_trait_npc(object npc, string nameTrait, int active, int image, string desc) . set_selectable_perk_npc . sfall.h . void set_selectable_perk_npc(object npc, string namePerk, int active, int image, string desc) . ",
     "url": "/sfall-wiki/npc-perks/#functions",
     "relUrl": "/npc-perks/#functions"
-  },"118": {
+  },"116": {
     "doc": "Objects and scripts",
     "title": "Objects and scripts",
     "content": " ",
     "url": "/sfall-wiki/objects-and-scripts/",
     "relUrl": "/objects-and-scripts/"
-  },"119": {
+  },"117": {
     "doc": "Objects and scripts",
     "title": "Functions",
     "content": ". | dialog_obj | get_flags | get_object_data | get_script | loot_obj | obj_is_carrying_obj | obj_under_cursor | real_dude_obj | remove_script | set_dude_obj | set_flags | set_object_data | set_script | set_self | set_unique_id | . dialog_obj . sfall.h . ObjectPtr dialog_obj() . Returns a pointer to the object (critter) the player is having a conversation or bartering with. get_flags . sfall.h . int get_flags(ObjectPtr obj) . Gets the current value of object flags (see define_extra.h for available flags). get_object_data . sfall.h . get_object_data(ObjectPtr object, int offset) . Returns the data at the specified offset of an object (see OBJ_DATA_* constants in define_extra.h for offsets). get_script . int get_script(ObjectPtr) . | accepts a pointer to an object and returns its scriptID (line number in scripts.lst), or 0 if the object is unscripted. | returns -1 on argument error. | . loot_obj . sfall.h . ObjectPtr loot_obj() . Returns a pointer to the target object (container or critter) of the loot screen. obj_is_carrying_obj . int (ObjectPtr invenObj, ObjectPtr itemObj) . Returns number of itemObj inside invenObj’s inventory, note that both arguments are object pointers. useful when dealing with different stacks of same item (obj_is_carrying_obj_pid just returns total for all stacks of the same PID.) . obj_under_cursor . sfall.h . ObjectPtr obj_under_cursor(bool onlyCritter, bool includeDude) . Returns the object under the cursor on the main game screen. | onlyCritter: . | True - only checks critters and ignores their cover (roof tiles, walls, scenery, etc.) | False - checks all objects (can’t check critters under objects) | . | passing False to the includeDude argument will ignore dude_obj . | NOTE: to get an object located on a tile when the cursor is in movement mode (hexagon cursor), use the tile_under_cursor function | . | . real_dude_obj . sfall.h . ObjectPtr real_dude_obj() . Returns the initial dude_obj after set_dude_obj was used. remove_script . void remove_script(ObjectPtr) . Accepts a pointer to an object and will remove the script from that object. set_dude_obj . sfall.h . void set_dude_obj(ObjectPtr critter) . Take control of a given critter. Passing value 0 will reset control back to “real” dude. set_flags . sfall.h . void set_flags(ObjectPtr obj, int flags) . Sets the current flags of an object. All flags are rewritten with given integer, so first get current flags with get_flags and use bwor/bwand to set/remove specific flag. set_object_data . sfall.h . set_object_data(ObjectPtr object, int offset, int data) . Sets the data at the specified offset of an object. set_script . void set_script(ObjectPtr, int scriptid) . Accepts a pointer to an object and scriptID, and applies the given script to an object (scriptID accept the same values as create_object_sid from sfall 3.6). If used on an object that is already scripted, it will remove the existing script first; you cannot have multiple scripts attached to a single object. Calling set_script on self_obj will have all sorts of wacky side effects, and should be avoided. If you add 0x80000000 to the sid when calling set_script, map_enter_p_proc will be SKIPPED. The start proc will always be run. set_self . void set_self(ObjectPtr) . Overrides the script’s self_obj for the next function call. | It is primarily used to allow the calling of functions which take an implicit self_obj parameter (e.g. drop_obj) from global scripts, but it can also be used from normal scripts. | Will revert back to its original value after the next function call. | Calling self_obj(0) will also revert self_obj to original value. It is recommended to call this after each use of set_self in normal scripts in order to avoid unforeseen side effects. | source_obj, target_obj, and similar functions will not work if preceded by set_self. | NOTE: for use_obj, use_obj_on_obj vanilla functions to work correctly, it is required to call set_self twice. | . set_unique_id . sfall.h . int set_unique_id(ObjectPtr object, int flag) . Assigns a unique ID number to the object and returns it. If a unique ID number has already been assigned to an object, then ID number is returned without reassignment. flag is optional. | items with unique IDs will not stack with other items of the same type in the inventory | to just get the current ID number of an object, use get_object_data(object, OBJ_DATA_ID) | unique ID numbers are saved in your savegame, and have a range from 0x10000000 to 0x7FFFFFFF | there is also a unique ID number range for the player and party members from 18000 to 83535 | to assign a new ID number generated by the engine to the object (i.e. unassign a unique ID), call the function with two arguments and pass -1 for the flag argument | . ",
     "url": "/sfall-wiki/objects-and-scripts/#functions",
     "relUrl": "/objects-and-scripts/#functions"
-  },"120": {
+  },"118": {
     "doc": "Оптимизация",
     "title": "Optimization",
     "content": ". | sslc -O option | Writing your own code | . The executation speed of scripts is not typically important in an unmodded game, given the difference in performance between a modern computer and what Fallout was designed for. When you start adding mods to the mix there’s the potential for problems again, since sfall’s global script system means that you can have a large amount of scripts being run every single frame. ",
     "url": "/sfall-wiki/optimization/#optimization",
     "relUrl": "/optimization/#optimization"
-  },"121": {
+  },"119": {
     "doc": "Оптимизация",
     "title": "sslc -O option",
     "content": "The sfall build of sslc supports a -O command line option to perform an optimization pass over the generated code. This isn’t a magic make-my-code-go-faster bullet; most of what it does is very limited in scope. It’s primary purpose was to strip out the procedures and variables which get automatically pulled into every script that includes define.h, whether you use them or not, and to do something about the additional variables that get created by foreach loops. There are several levels of optimization available: . | -O1 - Basic, only removes unreferenced globals variables and procedures, code itself remains untouched. | -O2 - Full, most code optimizations are on, but only those that were tested on complex scripts. | -O3 - Experimental, provides most efficiency, but tend to break some complex code due to bugs. | . The following optimizations are performed: . | constant expression folding: if an expression depends only on values which are known at compile time, then the expression is replaced by its result. a:=2+2; -&gt; a:=4; | constant variable initialization: All variables are initialised to some value, (‘0’, if you don’t specify anything else,) so sslc attempts to make use of that fact to remove the first assignment to a variable if the first assignment is a constant expression. variable a; -&gt; variable a:=4; a:=4; -&gt; . | constant propagation: checks for values assigned to variables which can be computed at compile time, and replaces relevent references to the symbol by the constant. The original store is not removed by this optimization. Global variables are considered for this optimization only if they are not marked import or export, and are not assigned to anywhere in the script. a:=4 -&gt; a:=4 foo(a); -&gt; foo(4); . | dead code removal: Checks for and removes code which cannot be reached, either because it is hidden behind a return or because the argument to an if statement can be computed at compile time. if 1 then begin -&gt; display_msg(\"foo\"); display_msg(\"foo\"); -&gt; end else begin -&gt; display_msg(\"bar\"); -&gt; end -&gt; . | unreferenced variable elimination: Checks for variables which are never referenced, and removes them. Also applies to global variables, as long as they are not marked for export. variable i, j, k; -&gt; variable i; i:=1; -&gt; i:=1; return; -&gt; return; . | unreferenced procedure elimination: Checks for any procedures which are never called, and removes them. procedure foo begin return \"foo\"; end -&gt; procedure foo begin return \"foo\"; end procedure bar begin return \"bar\"; end -&gt; procedure start begin procedure start begin -&gt; display_msg(foo); display_msg(foo); -&gt; end end -&gt; . | dead store removal: Removes variable assignments if the result of the variable is unused, and if the expression used to compute the value of the variable is provably free of side effects. (See ‘pure’ keyword) a:=\"moo\"; -&gt; a:=\"foo\"; a:=\"foo\"; -&gt; display_msg(a); display_msg(a); -&gt; a:=\"bar\"; -&gt; . | store combination: Where there are two stores in a row to the same variable, the two expressions are combined. var1 := var2; -&gt; var1 := var2 + var3; var1 += var3; -&gt; . | variable combination: Where usage regions of variables do not overlap, combine the variables to provide additional candidates for unreferenced variable elimination. Very useful for scripts containing multiple foreach loops, which generate 2 or 3 hidden variables each. a:=\"foo\"; -&gt; a:=\"foo\"; display_msg(a); -&gt; display_msg(a); b:=\"bar\"; -&gt; a:=\"bar\"; display_msg(b); -&gt; display_msg(a); . | namelist compression: Fallout stores the names of all file scope variables and procedures in a namelist which is saved into the .int. Any of these that are unreferenced can be removed, and the names of global variables can be modified to make them shorter. | . ",
     "url": "/sfall-wiki/optimization/#sslc--o-option",
     "relUrl": "/optimization/#sslc--o-option"
-  },"122": {
+  },"120": {
     "doc": "Оптимизация",
     "title": "Writing your own code",
     "content": ". | Don’t have global scripts running any more often that you need them to. Not everything needs to be run every single frame. | Never concat constant strings with the ‘+’ operator, as it forces the operation to be done at runtime. The compiler can cope with constant strings being placed next to each other without the need for a +, which results in far more efficient code as the combination is done at lex time. #define GLOB_PREFIX \"ts__\" -&gt; #define GLOB_PREFIX \"ts__\" procedure start begin -&gt; procedure start begin set_sfall_global(GLOB_PREFIX + \"foo1\", 0); -&gt; set_sfall_global(GLOB_PREFIX \"foo1\", 0); end -&gt; end . | Avoid function calls in while loops. function calls are expensive in comparison to variable lookups, so it’s more efficient to move the function call out of the loop and store the result in a variable while i &lt; len_array(array) do begin -&gt; tmp:= len_array(array); ... -&gt; while i &lt; tmp do begin end -&gt; ... -&gt; end . | Mark functions with pure or inline where relevent. ‘pure’ is a hint to the optimizer that a procedure has no side effects. (i.e. there’s no way to tell that it’s been called aside from its return value.) Pure procedures cannot modify global variables, or call any other procedure that isn’t itself pure. Functions marked with pure can only be used in expressions (i.e. you cannot use the call &lt;procedure&gt; syntax to call them.) If there are non-pure terms in an expression, it prevents that expression being considered for dead store removal. Where no such optimizations can be performed, or if optimization is disabled, marking a procedure with pure will have no effect on the compiled code. ‘inline’ is an instruction to the compiler to replace calls to the marked procedure with a copy of the procedures code instead of having a seperate call. inlined procedures cannot use the ‘return’ command, cannot be predefined, and cannot be used as part of an expression. inlining if a procedure is only going to be called once is always a win, but if there are multiple calls to a procedure you will end up bloating the size of the generated code. | . ",
     "url": "/sfall-wiki/optimization/#writing-your-own-code",
     "relUrl": "/optimization/#writing-your-own-code"
-  },"123": {
+  },"121": {
     "doc": "Оптимизация",
     "title": "Оптимизация",
     "content": " ",
     "url": "/sfall-wiki/optimization/",
     "relUrl": "/optimization/"
-  },"124": {
+  },"122": {
     "doc": "Other",
     "title": "Other",
     "content": " ",
     "url": "/sfall-wiki/other/",
     "relUrl": "/other/"
-  },"125": {
+  },"123": {
     "doc": "Other",
     "title": "Functions",
     "content": ". | active_hand | add_g_timer_event | add_trait | create_message_window | create_spatial | game_loaded | gdialog_get_barter_mod | get_game_mode | get_inven_ap_cost | get_kill_counter | get_light_level | get_npc_level | get_proto_data | get_unspent_ap_bonus | get_unspent_ap_perk_bonus | get_uptime | get_viewport_x | get_viewport_y | get_year | hero_select_win | inc_npc_level | input_funcs_available | mark_movie_played | message_str_game | mod_kill_counter | nb_create_char | resume_game | set_base_hit_chance_mod | set_base_pickpocket_mod | set_critter_hit_chance_mod | set_critter_pickpocket_mod | set_df_model | set_dm_model | set_hit_chance_max | set_hp_per_level_mod | set_inven_ap_cost | set_movie_path | set_pickpocket_max | set_pipboy_available | set_proto_data | set_unspent_ap_bonus | set_unspent_ap_perk_bonus | set_viewport_x | set_viewport_y | set_xp_mod | sneak_success | stop_game | toggle_active_hand | unwield_slot | . active_hand . int active_hand . add_g_timer_event . sfall.h . void add_g_timer_event(int time, int fixedParam) . Adds a timer event that calls the timed_event_p_proc procedure in the current global script time: the number of ticks after which the event timer is triggered fixedParam: the value that is passed to the timed_event_p_proc procedure for the fixed_param function . add_trait . sfall.h . void add_trait(int traitID) . adds the specified trait to the player . create_message_window . void create_message_window(string message) . create_spatial . ObjectPtr create_spatial(int scriptID, int tile, int elevation, int radius) . Creates new spatial script with given SID, at given tile, and radius. game_loaded . int game_loaded() . Returns 1 the first time it is called after a new game or game load, and 0 any time after. It works on an individual basis for each script, so one script wont interfere with others. Its primary use is for global scripts, so that they know when to call set_global_script_repeat, but it can be called from normal scripts too. gdialog_get_barter_mod . int gdialog_get_barter_mod . get_game_mode . int get_game_mode() . A more flexible version of in_world_map. It will return a set of flags indicating which mode the game is currently in. These flags are the same as those used in the set_shader_mode function. get_inven_ap_cost . int get_inven_ap_cost . Returns the current AP cost to access the inventory in combat . get_kill_counter . int get_kill_counter(int critterType) . get_light_level . int get_light_level() . Returns ambient light level in range 0..65536. The value returned by get_light_level may not exactly match that set by set_light_level, as set_light_level applies modifiers from the Night Vision perk. get_npc_level . int get_npc_level(string npc) . get_proto_data . int get_proto_data(int pid, int offset) . Used to read the in-memory copies of the .pro files Fallout makes when they are loaded. The offset refers to the offset in memory from the start of the proto to the element you are reading. get_unspent_ap_bonus . int get_unspent_ap_bonus() . Gets the AC bonus you receive per unused action point at the end of your turn in combat. To allow for fractional values, the value given if divided by 4. (Hence the default value is 4 and not 1.) . get_unspent_ap_perk_bonus . int get_unspent_ap_perk_bonus() . Similar to get_unspent_ap_bonus, but accounts for the extra AC granted by the H2H Evade perk. (The default value of this is also 4, equivalent to doubling the original bonus. get_uptime . int get_uptime() . Just a wrapper around the windows GetTickCount() function. It’s useful for making time fade effects in shaders, since they already have access to the current tick count. get_viewport_x . int get_viewport_x() . get_viewport_y . int get_viewport_y() . get_year . int get_year . hero_select_win . void hero_select_win(int) . inc_npc_level . void inc_npc_level(int party_member_pid) . Takes a party member PID or an NPC name (deprecated, for compatibility with sfall 4.1.5/3.8.15 or earlier) as an argument. The NPC must be in your party. This function ignores player level requirements and the minimum 3 player level delay between NPC level gains. It also ignores the random element, regardless of sfall’s NPCAutoLevel setting. input_funcs_available . int input_funcs_available() . The input functions are only available if the user has the input hook turned on in ddraw.ini. Use input_funcs_available to check. mark_movie_played . void mark_movie_played(int id) . message_str_game . string message_str_game(int fileId, int messageId) . Works exactly the same as message_str, except you get messages from files in text/english/game folder. Use GAME_MSG_* defines or mstr_* macros from sfall.h to use specific msg file . | Additional game msg files added by ExtraGameMsgFileList setting will have consecutive fileIds assigned beginning from 0x2000 to 0x2FFF. (e.g. if you set ExtraGameMsgFileList=foo,bar in ddraw.ini, foo.msg will be associated with 0x2000 and bar.msg with 0x2001.). | If a file has a specific number assigned in ExtraGameMsgFileList, its fileId will be (0x2000 + assigned number). (e.g. with ExtraGameMsgFileList=foo,bar:2,foobar in ddraw.ini, bar.msg will be associated with 0x2002 and foobar.msg with 0x2003.) | . mod_kill_counter . void mod_kill_counter(int critterType, int amount) . nb_create_char . int nb_create_char() . nb_* functions are reserved for the brotherhood tactical training mod, and should be avoided. resume_game . void resume_game() . set_base_hit_chance_mod . void set_base_hit_chance_mod(int max, int mod) . set_base_pickpocket_mod . void set_base_pickpocket_mod(int max, int mod) . Changes maximum chance of success and chance mod for each steal attempt. max will replace 95% success chance cap (so you can set 100% maximum chance, for instance). mod will add this much percent to each success chance. for example if your chance is 50% and mod is 20, you will get 70% actual success rate . set_critter_hit_chance_mod . void set_critter_hit_chance_mod(CritterPtr, int max, int mod) . set_critter_pickpocket_mod . void set_critter_pickpocket_mod(CritterPtr, int max, int mod) . The same as set_base_pickpocket, but applies only to specific critter. set_df_model . void set_df_model(string name) . set_dm_model . void set_dm_model(string name) . set_hit_chance_max . void set_hit_chance_max(int percentage) . Effects all critters rather than just the player and can set the maximum in range from 0 to 999. set_hp_per_level_mod . void set_hp_per_level_mod(int mod) . set_inven_ap_cost . void set_inven_ap_cost . set_movie_path . void set_movie_path(string filename, int movieid) . set_pickpocket_max . void set_pickpocket_max(int percentage) . Effects all critters rather than just the player and can set the maximum in range from 0 to 999. set_pipboy_available . void set_pipboy_available(int available) . Will only accept 0 or 1 as an argument. Using any other value will cause the function to have no effect. Use 0 to disable the pipboy, and 1 to enable it. set_proto_data . void set_proto_data(int pid, int offset, int value) . Used to alter the in-memory copies of the .pro files Fallout makes when they are loaded. The offset refers to the offset in memory from the start of the proto to the element you are reading. Changes are not stored on disc, and are not permanent. If you modify the protos, and then Fallout subsequently reloads the file your changes will be lost. set_unspent_ap_bonus . void set_unspent_ap_bonus(int multiplier) . Alters the AC bonus you receive per unused action point at the end of your turn in combat. To allow for fractional values, the value given if divided by 4. (Hence the default value is 4 and not 1.) . set_unspent_ap_perk_bonus . void set_unspent_ap_perk_bonus(int multiplier) . Similar to set_unspent_ap_bonus, but effects the extra AC granted by the H2H Evade perk. (The default value of this is also 4, equivalent to doubling the original bonus. set_viewport_x . void set_viewport_x(int view_x) . set_viewport_y . void set_viewport_y(int view_y) . set_xp_mod . void set_xp_mod(int percentage) . sneak_success . int sneak_success . Returns 1 if last sneak attempt (roll against skill) was successful, 0 otherwise. This calls an internal engine function which is used to determine the perception range of critters (which you can override using HOOK_WITHINPERCEPTION). stop_game . void stop_game() . toggle_active_hand . void toggle_active_hand . unwield_slot . void sfall_func2(\"unwield_slot\", object critter, int slot) . unequips an item from the specified slot for a critter or the player can take off player’s equipped item when the inventory is opened, or the player is in the barter screen slot: 0 - armor slot, 1 - right slot, 2 - left slot (see INVEN_TYPE_* in define.h) . ",
     "url": "/sfall-wiki/other/#functions",
     "relUrl": "/other/#functions"
-  },"126": {
+  },"124": {
     "doc": "Outline",
     "title": "Outline",
     "content": " ",
     "url": "/sfall-wiki/outline/",
     "relUrl": "/outline/"
-  },"127": {
+  },"125": {
     "doc": "Outline",
     "title": "Functions",
     "content": ". | get_outline | outlined_object | set_outline | . get_outline . sfall.h . int get_outline(ObjectPtr obj) . Gets the current outline color for an object. outlined_object . sfall.h . ObjectPtr outlined_object() . Returns an object that is currently highlighted by hovering the mouse above it. set_outline . sfall.h . void set_outline(ObjectPtr obj, int color) . | sets the outline color of an object (see OUTLINE_* constants in sfall.h) | can also set a custom color from the game palette by shifting the color index value left by 8 bits: 0xCC00 where CC is the palette index (available since sfall 4.2.7/3.8.27) | passing 0 will disable the outline | . ",
     "url": "/sfall-wiki/outline/#functions",
     "relUrl": "/outline/#functions"
-  },"128": {
+  },"126": {
     "doc": "Perks and traits",
     "title": "Perks and traits",
     "content": " ",
     "url": "/sfall-wiki/perks-and-traits/",
     "relUrl": "/perks-and-traits/"
-  },"129": {
+  },"127": {
     "doc": "Perks and traits",
     "title": "Subcategories",
     "content": ". | NPC perks | . ",
     "url": "/sfall-wiki/perks-and-traits/#subcategories",
     "relUrl": "/perks-and-traits/#subcategories"
-  },"130": {
+  },"128": {
     "doc": "Perks and traits",
     "title": "Functions",
     "content": ". | apply_heaveho_fix | clear_selectable_perks | get_perk_available | get_perk_owed | has_fake_perk | has_fake_trait | hide_real_perks | perk_add_mode | remove_trait | seq_perk_freq | set_fake_perk | set_fake_trait | set_perk_agl | set_perk_chr | set_perk_desc | set_perk_end | set_perk_freq | set_perk_image | set_perk_int | set_perk_lck | set_perk_level | set_perk_level_mod | set_perk_name | set_perk_owed | set_perk_per | set_perk_ranks | set_perk_skill1 | set_perk_skill1_mag | set_perk_skill2 | set_perk_skill2_mag | set_perk_stat | set_perk_stat_mag | set_perk_str | set_perk_type | set_perkbox_title | set_pyromaniac_mod | set_selectable_perk | set_swiftlearner_mod | show_real_perks | . apply_heaveho_fix . void apply_heaveho_fix . clear_selectable_perks . void clear_selectable_perks() . Restores the “select a perk” box to its default state. get_perk_available . int get_perk_available(int perk) . get_perk_owed . int get_perk_owed . has_fake_perk . int has_fake_perk(string name) . Returns the number of levels the player has of the perks with the given name or ID of extra perk. has_fake_trait . int has_fake_trait(string name) . Returns the number of levels the player has of the traits with the given name or ID of extra trait. hide_real_perks . void hide_real_perks() . Prevent the “select a perk” box from displaying any of the original 119 perks. perk_add_mode . void perk_add_mode(int type) . Modifies what happens when a fake perk is selected from the perks dialog. It is treated as a set of flags - if bit 1 is set then it is added to the player’s traits, if bit 2 is set it is added to the player’s perks, and if bit 3 is set it is removed from the list of selectable perks. The default is 0x2. remove_trait . void remove_trait(int traitID) . seq_perk_freq . void seq_perk_freq(int value) . Sets the number of levels between each perk. set_fake_perk . void set_fake_perk(string name, int level, int image, string desc) . Used to add additional traits and perks to the character screen. They will be saved correctly when the player saves and reloads games, but by themselves they will have no further effect on the character. For perks, the allowed range for levels is between 0 and 100; setting the level to 0 removes that perk. For traits, the level must be 0 or 1. The image is a numeric id that corresponds to an entry in skilldex.lst. The name is limited to 63 characters and the description to 255 characters by sfall, but internal Fallout limits may be lower. set_fake_trait . void set_fake_trait(string name, int active, int image, string desc) . Used to add additional traits and perks to the character screen. They will be saved correctly when the player saves and reloads games, but by themselves they will have no further effect on the character. For perks, the allowed range for levels is between 0 and 100; setting the level to 0 removes that perk. For traits, the level must be 0 or 1. The image is a numeric id that corresponds to an entry in skilldex.lst. The name is limited to 63 characters and the description to 255 characters by sfall, but internal Fallout limits may be lower. set_perk_agl . void set_perk_agl(int perkID, int value) . set_perk_chr . void set_perk_chr(int perkID, int value) . set_perk_desc . void set_perk_desc(int perkID, string value) . set_perk_end . void set_perk_end(int perkID, int value) . set_perk_freq . void set_perk_freq(int value) . Sets the number of levels between each perk. Setting to 0 will reset it back to the default. This overrides the effects of the skilled trait. Not saved into the save game, so needs to be called once per reload. Be careful not to let the player obtain a perk when no perks are available to pick, or the game may crash. set_perk_image . void set_perk_image(int perkID, int value) . set_perk_int . void set_perk_int(int perkID, int value) . set_perk_lck . void set_perk_lck(int perkID, int value) . set_perk_level . void set_perk_level(int perkID, int value) . set_perk_level_mod . void set_perk_level_mod(int levels) . Sets a modifier between +25 and -25 that is added/subtracted from the player’s level for the purposes of deciding which perks can be chosen. set_perk_name . void set_perk_name(int perkID, string value) . set_perk_owed . void set_perk_owed(int value) . set_perk_per . void set_perk_per(int perkID, int value) . set_perk_ranks . void set_perk_ranks(int perkID, int value) . set_perk_skill1 . void set_perk_skill1(int perkID, int value) . set_perk_skill1_mag . void set_perk_skill1_mag(int perkID, int value) . set_perk_skill2 . void set_perk_skill2(int perkID, int value) . set_perk_skill2_mag . void set_perk_skill2_mag(int perkID, int value) . set_perk_stat . void set_perk_stat(int perkID, int value) . set_perk_stat_mag . void set_perk_stat_mag(int perkID, int value) . set_perk_str . void set_perk_str(int perkID, int value) . set_perk_type . void set_perk_type(int perkID, int value) . set_perkbox_title . void set_perkbox_title(string title) . Used to change the title of the “select a perk” box, or by using “” it will be set back to the default. set_pyromaniac_mod . void set_pyromaniac_mod(int bonus) . set_selectable_perk . void set_selectable_perk(string name, int active, int image, string desc) . Used to add additional items to “select a perk” box by setting the ‘active’ parameter to 1, and to remove them again by setting it to 0. set_swiftlearner_mod . void set_swiftlearner_mod(int bonus) . show_real_perks . void show_real_perks() . Reverts the effect os hide_real_perks. ",
     "url": "/sfall-wiki/perks-and-traits/#functions",
     "relUrl": "/perks-and-traits/#functions"
+  },"129": {
+    "doc": "Списки (Lists)",
+    "title": "Списки (Lists)",
+    "content": "The list_xxx functions can be used to loop over all items on a map. list_begin takes an argument telling sfall what you want to list. (Defined in sfall.h) It returns a list pointer, which you iterate through with list_next. Finally, when you’ve finished with the list use list_end on it. Not calling list_end will result in a memory leak. Alternatively, use list_as_array to get the whole list at once as a temp array variable, which can be looped over using len_array and which you don’t need to remember to free afterwards. ",
+    "url": "/sfall-wiki/pages/permalink:%20lists.html",
+    "relUrl": "/pages/permalink:%20lists.html"
+  },"130": {
+    "doc": "Списки (Lists)",
+    "title": "Functions",
+    "content": ". | list_as_array | list_begin | list_end | list_next | party_member_list | . list_as_array . array list_as_array(int type) . list_begin . int list_begin(int type) . list_end . void list_end(int listid) . list_next . int list_next(int listid) . party_member_list . array party_member_list(int includeHidden) . Returns an array of all current party members (0 - only critter-type, alive and visible will be returned, 1 - all object, including Trunk, etc.) . ",
+    "url": "/sfall-wiki/pages/permalink:%20lists.html#functions",
+    "relUrl": "/pages/permalink:%20lists.html#functions"
   },"131": {
     "doc": "Pip-Boy",
     "title": "Pip-Boy",
@@ -1063,7 +1063,7 @@
   },"177": {
     "doc": "Функции массивов",
     "title": "Subcategories",
-    "content": ". | Lists | . ",
+    "content": ". | Списки (Lists) | . ",
     "url": "/sfall-wiki/%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8-%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%BE%D0%B2/#subcategories",
     "relUrl": "/функции-массивов/#subcategories"
   },"178": {
