@@ -565,13 +565,13 @@
   },"94": {
     "doc": "Документация",
     "title": "Table of contents",
-    "content": "1 TOC . To get started with sfall, first familiarize yourself with new concepts: . | Global scripts and variables. | Arrays and lists. | Hooks. | Data types. | Object and script manipulation. | . Pay special attention to the best practices page. Also, take a look at SSLC features and optimization guide. Next, proceed to discover new functions. They are categorized, use the menu to find the one you need. If you can’t, check uncategorized functions list and sfall macros. Also, there’s search at the top of the page. Note that this is documentation for sfall specifically, not Fallout scripting in general. For vanilla function reference, refer to the wiki. ",
+    "content": "To get started with sfall, first familiarize yourself with new concepts: . | Global scripts and variables. | Arrays and lists. | Hooks. | Data types. | Object and script manipulation. | . Pay special attention to the best practices page. Also, take a look at SSLC features and optimization guide. Next, proceed to discover new functions. They are categorized, use the menu to find the one you need. If you can’t, check uncategorized functions list and sfall macros. Also, there’s search at the top of the page. Note that this is documentation for sfall specifically, not Fallout scripting in general. For vanilla function reference, refer to the wiki. ",
     "url": "/sfall-wiki/#table-of-contents",
     "relUrl": "/#table-of-contents"
   },"95": {
     "doc": "Документация",
     "title": "Документация",
-    "content": " ",
+    "content": "Preview dark color scheme . ",
     "url": "/sfall-wiki/",
     "relUrl": "/"
   },"96": {
