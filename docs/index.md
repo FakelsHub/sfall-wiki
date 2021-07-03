@@ -1,41 +1,29 @@
 ---
 navigation: 1
-title: Home
+title: Документация
 permalink: /
+has_children: true
 nav_order: 1
+has_toc: false
 ---
 
-## sfall
-{: .no_toc}
+## Начало работы
 
-* TOC
-{: toc}
+Чтобы начать работу с sfall, сначала ознакомьтесь с новыми концепциями:
+* Глобальные [скрипты]({{ site.baseurl }}/global-scripts/) и [variables]({{ site.baseurl }}/global-variables/)
+* [Массивы]({{ site.baseurl }}/arrays/) и [списки]({{ site.baseurl }}/lists/)
+* [Крючки]({{ site.baseurl }}/hooks/)
+* [Типы данных]({{ site.baseurl }}/data-types/)
+* [Object and script manipulation]({{ site.baseurl }}/objects-and-scripts/)
 
-Sfall is a set of engine modifications for the classic game Fallout 2 in form of a DLL, which modifies executable in memory without changing anything in EXE file itself.
+Обратите особое внимание на страницу [практических советов]({{ site.baseurl }}/best-practices/). Кроме того, прочитайте [особенности SSLC]({{ site.baseurl }}/sslc/) и [руководство по оптимизации]({{ site.baseurl }}/optimization/).
 
-Engine modifications include:
+Затем перейдите к изучению новых функций. Они классифицированы, используйте меню, чтобы найти то, что вам нужно. Если вы не можете найти, проверьте список [некатегоризированных функции]({{ site.baseurl }}/other/) и [sfall macros]({{ site.baseurl }}/sfall-funcx-macros/). Кроме того, в верхней части страницы есть поиск.
 
-* Better support for modern operating systems
-* Externalizing many settings like starting map and game time, skills, perks, critical hit tables, books, etc.
-* Bug fixes
-* Many additional features for users, such as item highlight button, party member control, etc.
-* Extended scripting capabilities for modders (many new opcodes to control sfall features as well as previously unavailable vanilla engine functions)
+Обратите внимание, что это документация написана специально для sfall, а не для сценариев Fallout в целом.<br>
+Для получения справочной информации о функциях Fallout обратитесь к [wiki](https://falloutmods.fandom.com/wiki/Fallout_1_and_Fallout_2_scripting_-_commands,_reference,_tutorials).
 
-Note that this is documentation for sfall specifically, not Fallout scripting in general. For vanilla function reference, refer to the [wiki](https://falloutmods.fandom.com/wiki/Fallout_1_and_Fallout_2_scripting_-_commands,_reference,_tutorials).
-
-## Getting started
-
-To get started with sfall, first familiarize yourself with new concepts:
-* Global [scripts]({{ site.baseurl }}/global-scripts/) and [variables]({{ site.baseurl }}/global-variables/).
-* [Arrays]({{ site.baseurl }}/arrays/) and [lists]({{ site.baseurl }}/lists/).
-* [Hooks]({{ site.baseurl }}/hooks/).
-* [Data types]({{ site.baseurl }}/data-types/).
-* [Object and script manipulation]({{ site.baseurl }}/objects-and-scripts/).
-
-Pay special attention to the [best practices]({{ site.baseurl }}/best-practices/) page. Also, take a look at [SSLC features]({{ site.baseurl }}/sslc/) and [optimization guide]({{ site.baseurl }}/optimization/).
-
-Next, proceed to discover new functions. They are categorized, use the menu to find the one you need. If you can't, check [uncategorized functions]({{ site.baseurl }}/other/) list and [sfall macros]({{ site.baseurl }}/sfall-funcx-macros/). Also, there's search at the top of the page.
-
-## Questions and problems
-* Report bugs and suggest features on [Github](https://github.com/phobos2077/sfall/issues).
-* Ask questions and discuss on the [forum](http://nma-fallout.com/threads/fo2-engine-tweaks-sfall.178390/).
+Alternative documentation in English:<br>
+<span class="fs-3">
+[Goto](https://phobos2077.github.io/sfall/){: .btn .btn-blue }
+</span>

@@ -1,21 +1,24 @@
 ---
-title: Data types
-nav_order: 2
+title: Типы данных
+parent: Документация
 permalink: /data-types/
+nav_order: 1
+has_toc: false
 ---
 
-# Data types
-{: .no_toc}
+# Типы данных
 
-Data types mentioned in this document
+Типы данных, упомянутые в документации.
 
-* `array` - array ID to be used with array-related functions (actually an integer)
-* `any` - any type
-* `bool` - boolean (in fact, `int`: `True` is 1 and `False` is 0)
-* `int` - integer number
-* `mixed` - type depends on exact use case
-* `float` - floating point number
-* `ObjectPtr` - pointer to a game object (actually an integer)
-* `proc` - procedure name (used in [register_hook_proc]({{ site.baseurl }}/hook-functions/#register_hook_proc))
-* `string` - string (text) value
-* `void` - means opcode does not return any value
+- `array` - ID идентификатор массива для использования с функциями, связанные с массивами (ID это фактически целое число)
+- `any` - любой тип
+- `bool` - логическое значение (фактически это тип `int` где: `True` равно 1, а `False` равно 0)
+- `int` - целое число
+- `mixed` - тип зависит от конкретного случая использования
+- `float` - число с плавающей запятой
+- `ObjectPtr` - указатель на игровой объект (фактически целое число)
+- `proc` - имя процедуры (используется в [register_hook_proc]({{ site.baseurl }}/hook-functions/#register_hook_proc))
+- `string` - строковое (текстовое) значение
+- `void` - означает, что код операции не возвращает никакого значения
+
+Вы можете узнать значение типа переменной использую sfall функцию: [typeof]({{ site.baseurl }}/others/#typeof)

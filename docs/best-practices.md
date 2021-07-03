@@ -1,9 +1,8 @@
 ---
-title: Best practices
+title: Практические советы
+parent: Документация
 permalink: /best-practices/
-nav_order: 2
 ---
-
 
 # Best practices
 {: .no_toc}

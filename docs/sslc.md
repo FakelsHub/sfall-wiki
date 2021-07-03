@@ -1,8 +1,8 @@
 ---
 layout: page
-title: SSLC
+title: Компилятор (sslc)
+parent: Документация
 permalink: /sslc/
-nav_order: 4
 ---
 
 # SSLC

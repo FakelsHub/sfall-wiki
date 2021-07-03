@@ -1,6 +1,6 @@
 ---
-title: Hooks
-nav_order: 2
+title: Крючки (Hooks)
+nav_order: 5
 has_children: true
 permalink: /hooks/
 ---

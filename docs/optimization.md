@@ -1,10 +1,9 @@
 ---
 layout: page
-title: Optimization
+title: Оптимизация
+parent: Документация
 permalink: /optimization/
-nav_order: 5
 ---
-
 
 # Optimization
 {: .no_toc}

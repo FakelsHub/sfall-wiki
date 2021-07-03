@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Global scripts
-nav_order: 2
+title: Глобальные сценарии # Global scripts
+nav_order: 3
 has_children: true
 has_toc: false
 permalink: /global-scripts/
