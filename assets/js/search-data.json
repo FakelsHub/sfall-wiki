@@ -641,17 +641,17 @@
     "url": "/sfall-wiki/knockback/#functions",
     "relUrl": "/knockback/#functions"
   },"107": {
-    "doc": "Lists",
-    "title": "Lists",
+    "doc": "Lists (Массивы)",
+    "title": "Lists (Массивы)",
     "content": "The list_xxx functions can be used to loop over all items on a map. list_begin takes an argument telling sfall what you want to list. (Defined in sfall.h) It returns a list pointer, which you iterate through with list_next. Finally, when you’ve finished with the list use list_end on it. Not calling list_end will result in a memory leak. Alternatively, use list_as_array to get the whole list at once as a temp array variable, which can be looped over using len_array and which you don’t need to remember to free afterwards. ",
-    "url": "/sfall-wiki/lists/",
-    "relUrl": "/lists/"
+    "url": "/sfall-wiki/lists-(%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%8B)/",
+    "relUrl": "/lists-(массивы)/"
   },"108": {
-    "doc": "Lists",
+    "doc": "Lists (Массивы)",
     "title": "Functions",
     "content": ". | list_as_array | list_begin | list_end | list_next | party_member_list | . list_as_array . array list_as_array(int type) . list_begin . int list_begin(int type) . list_end . void list_end(int listid) . list_next . int list_next(int listid) . party_member_list . array party_member_list(int includeHidden) . Returns an array of all current party members (0 - only critter-type, alive and visible will be returned, 1 - all object, including Trunk, etc.) . ",
-    "url": "/sfall-wiki/lists/#functions",
-    "relUrl": "/lists/#functions"
+    "url": "/sfall-wiki/lists-(%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%8B)/#functions",
+    "relUrl": "/lists-(массивы)/#functions"
   },"109": {
     "doc": "Locks",
     "title": "Locks",
