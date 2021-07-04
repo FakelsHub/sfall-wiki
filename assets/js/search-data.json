@@ -715,7 +715,7 @@
   },"119": {
     "doc": "Разное",
     "title": "Функции",
-    "content": ". | active_hand | add_g_timer_event | add_trait | create_message_window | create_spatial | game_loaded | gdialog_get_barter_mod | get_game_mode | get_inven_ap_cost | get_kill_counter | get_light_level | get_npc_level | get_proto_data | get_unspent_ap_bonus | get_unspent_ap_perk_bonus | get_uptime | get_viewport_x | get_viewport_y | get_year | hero_select_win | inc_npc_level | mark_movie_played | message_str_game | mod_kill_counter | nb_create_char | resume_game | set_base_hit_chance_mod | set_base_pickpocket_mod | set_critter_hit_chance_mod | set_critter_pickpocket_mod | set_df_model | set_dm_model | set_hit_chance_max | set_hp_per_level_mod | set_inven_ap_cost | set_movie_path | set_pickpocket_max | set_pipboy_available | set_proto_data | set_unspent_ap_bonus | set_unspent_ap_perk_bonus | set_viewport_x | set_viewport_y | set_xp_mod | sneak_success | stop_game | toggle_active_hand | unwield_slot | . active_hand . int active_hand . add_g_timer_event . funcX . void add_g_timer_event(int time, int fixedParam) . Adds a timer event that calls the timed_event_p_proc procedure in the current global script time: the number of ticks after which the event timer is triggered fixedParam: the value that is passed to the timed_event_p_proc procedure for the fixed_param function . add_trait . funcX . void add_trait(int traitID) . adds the specified trait to the player . create_message_window . void create_message_window(string message) . create_spatial . ObjectPtr create_spatial(int scriptID, int tile, int elevation, int radius) . Creates new spatial script with given SID, at given tile, and radius. game_loaded . int game_loaded() . Returns 1 the first time it is called after a new game or game load, and 0 any time after. It works on an individual basis for each script, so one script wont interfere with others. Its primary use is for global scripts, so that they know when to call set_global_script_repeat, but it can be called from normal scripts too. gdialog_get_barter_mod . int gdialog_get_barter_mod . get_game_mode . int get_game_mode() . A more flexible version of in_world_map. It will return a set of flags indicating which mode the game is currently in. These flags are the same as those used in the set_shader_mode function. get_inven_ap_cost . int get_inven_ap_cost . Returns the current AP cost to access the inventory in combat . get_kill_counter . int get_kill_counter(int critterType) . get_light_level . int get_light_level() . Returns ambient light level in range 0..65536. The value returned by get_light_level may not exactly match that set by set_light_level, as set_light_level applies modifiers from the Night Vision perk. get_npc_level . int get_npc_level(string npc) . get_proto_data . int get_proto_data(int pid, int offset) . Used to read the in-memory copies of the .pro files Fallout makes when they are loaded. The offset refers to the offset in memory from the start of the proto to the element you are reading. get_unspent_ap_bonus . int get_unspent_ap_bonus() . Gets the AC bonus you receive per unused action point at the end of your turn in combat. To allow for fractional values, the value given if divided by 4. (Hence the default value is 4 and not 1.) . get_unspent_ap_perk_bonus . int get_unspent_ap_perk_bonus() . Similar to get_unspent_ap_bonus, but accounts for the extra AC granted by the H2H Evade perk. (The default value of this is also 4, equivalent to doubling the original bonus. get_uptime . int get_uptime() . Just a wrapper around the windows GetTickCount() function. It’s useful for making time fade effects in shaders, since they already have access to the current tick count. get_viewport_x . int get_viewport_x() . get_viewport_y . int get_viewport_y() . get_year . int get_year . hero_select_win . void hero_select_win(int) . inc_npc_level . void inc_npc_level(int party_member_pid) . Takes a party member PID or an NPC name (deprecated, for compatibility with sfall 4.1.5/3.8.15 or earlier) as an argument. The NPC must be in your party. This function ignores player level requirements and the minimum 3 player level delay between NPC level gains. It also ignores the random element, regardless of sfall’s NPCAutoLevel setting. mark_movie_played . void mark_movie_played(int id) . message_str_game . string message_str_game(int fileId, int messageId) . Works exactly the same as message_str, except you get messages from files in text/english/game folder. Use GAME_MSG_* defines or mstr_* macros from sfall.h to use specific msg file . | Additional game msg files added by ExtraGameMsgFileList setting will have consecutive fileIds assigned beginning from 0x2000 to 0x2FFF. (e.g. if you set ExtraGameMsgFileList=foo,bar in ddraw.ini, foo.msg will be associated with 0x2000 and bar.msg with 0x2001.). | If a file has a specific number assigned in ExtraGameMsgFileList, its fileId will be (0x2000 + assigned number). (e.g. with ExtraGameMsgFileList=foo,bar:2,foobar in ddraw.ini, bar.msg will be associated with 0x2002 and foobar.msg with 0x2003.) | . mod_kill_counter . void mod_kill_counter(int critterType, int amount) . nb_create_char . int nb_create_char() . nb_* functions are reserved for the brotherhood tactical training mod, and should be avoided. resume_game . void resume_game() . set_base_hit_chance_mod . void set_base_hit_chance_mod(int max, int mod) . set_base_pickpocket_mod . void set_base_pickpocket_mod(int max, int mod) . Changes maximum chance of success and chance mod for each steal attempt. max will replace 95% success chance cap (so you can set 100% maximum chance, for instance). mod will add this much percent to each success chance. for example if your chance is 50% and mod is 20, you will get 70% actual success rate . set_critter_hit_chance_mod . void set_critter_hit_chance_mod(CritterPtr, int max, int mod) . set_critter_pickpocket_mod . void set_critter_pickpocket_mod(CritterPtr, int max, int mod) . The same as set_base_pickpocket, but applies only to specific critter. set_df_model . void set_df_model(string name) . set_dm_model . void set_dm_model(string name) . set_hit_chance_max . void set_hit_chance_max(int percentage) . Effects all critters rather than just the player and can set the maximum in range from 0 to 999. set_hp_per_level_mod . void set_hp_per_level_mod(int mod) . set_inven_ap_cost . void set_inven_ap_cost . set_movie_path . void set_movie_path(string filename, int movieid) . set_pickpocket_max . void set_pickpocket_max(int percentage) . Effects all critters rather than just the player and can set the maximum in range from 0 to 999. set_pipboy_available . void set_pipboy_available(int available) . Will only accept 0 or 1 as an argument. Using any other value will cause the function to have no effect. Use 0 to disable the pipboy, and 1 to enable it. set_proto_data . void set_proto_data(int pid, int offset, int value) . Used to alter the in-memory copies of the .pro files Fallout makes when they are loaded. The offset refers to the offset in memory from the start of the proto to the element you are reading. Changes are not stored on disc, and are not permanent. If you modify the protos, and then Fallout subsequently reloads the file your changes will be lost. set_unspent_ap_bonus . void set_unspent_ap_bonus(int multiplier) . Alters the AC bonus you receive per unused action point at the end of your turn in combat. To allow for fractional values, the value given if divided by 4. (Hence the default value is 4 and not 1.) . set_unspent_ap_perk_bonus . void set_unspent_ap_perk_bonus(int multiplier) . Similar to set_unspent_ap_bonus, but effects the extra AC granted by the H2H Evade perk. (The default value of this is also 4, equivalent to doubling the original bonus. set_viewport_x . void set_viewport_x(int view_x) . set_viewport_y . void set_viewport_y(int view_y) . set_xp_mod . void set_xp_mod(int percentage) . sneak_success . int sneak_success . Returns 1 if last sneak attempt (roll against skill) was successful, 0 otherwise. This calls an internal engine function which is used to determine the perception range of critters (which you can override using HOOK_WITHINPERCEPTION). stop_game . void stop_game() . toggle_active_hand . void toggle_active_hand . unwield_slot . void sfall_func2(\"unwield_slot\", object critter, int slot) . unequips an item from the specified slot for a critter or the player can take off player’s equipped item when the inventory is opened, or the player is in the barter screen slot: 0 - armor slot, 1 - right slot, 2 - left slot (see INVEN_TYPE_* in define.h) . ",
+    "content": ". | active_hand | add_g_timer_event | add_trait | create_message_window | create_spatial | game_loaded | gdialog_get_barter_mod | get_game_mode | get_inven_ap_cost | get_kill_counter | get_light_level | get_npc_level | get_proto_data | get_unspent_ap_bonus | get_unspent_ap_perk_bonus | get_uptime | get_viewport_x | get_viewport_y | get_year | inc_npc_level | mark_movie_played | message_str_game | mod_kill_counter | resume_game | set_base_hit_chance_mod | set_base_pickpocket_mod | set_critter_hit_chance_mod | set_critter_pickpocket_mod | set_hit_chance_max | set_hp_per_level_mod | set_inven_ap_cost | set_movie_path | set_pickpocket_max | set_pipboy_available | set_proto_data | set_unspent_ap_bonus | set_unspent_ap_perk_bonus | set_viewport_x | set_viewport_y | set_xp_mod | sneak_success | stop_game | toggle_active_hand | unwield_slot | . active_hand . int active_hand . add_g_timer_event . funcX . void add_g_timer_event(int time, int fixedParam) . Adds a timer event that calls the timed_event_p_proc procedure in the current global script time: the number of ticks after which the event timer is triggered fixedParam: the value that is passed to the timed_event_p_proc procedure for the fixed_param function . add_trait . funcX . void add_trait(int traitID) . adds the specified trait to the player . create_message_window . void create_message_window(string message) . create_spatial . ObjectPtr create_spatial(int scriptID, int tile, int elevation, int radius) . Creates new spatial script with given SID, at given tile, and radius. game_loaded . int game_loaded() . Returns 1 the first time it is called after a new game or game load, and 0 any time after. It works on an individual basis for each script, so one script wont interfere with others. Its primary use is for global scripts, so that they know when to call set_global_script_repeat, but it can be called from normal scripts too. gdialog_get_barter_mod . int gdialog_get_barter_mod . get_game_mode . int get_game_mode() . A more flexible version of in_world_map. It will return a set of flags indicating which mode the game is currently in. These flags are the same as those used in the set_shader_mode function. get_inven_ap_cost . int get_inven_ap_cost . Returns the current AP cost to access the inventory in combat . get_kill_counter . int get_kill_counter(int critterType) . get_light_level . int get_light_level() . Returns ambient light level in range 0..65536. The value returned by get_light_level may not exactly match that set by set_light_level, as set_light_level applies modifiers from the Night Vision perk. get_npc_level . int get_npc_level(string npc) . get_proto_data . int get_proto_data(int pid, int offset) . Used to read the in-memory copies of the .pro files Fallout makes when they are loaded. The offset refers to the offset in memory from the start of the proto to the element you are reading. get_unspent_ap_bonus . int get_unspent_ap_bonus() . Gets the AC bonus you receive per unused action point at the end of your turn in combat. To allow for fractional values, the value given if divided by 4. (Hence the default value is 4 and not 1.) . get_unspent_ap_perk_bonus . int get_unspent_ap_perk_bonus() . Similar to get_unspent_ap_bonus, but accounts for the extra AC granted by the H2H Evade perk. (The default value of this is also 4, equivalent to doubling the original bonus. get_uptime . int get_uptime() . Just a wrapper around the windows GetTickCount() function. It’s useful for making time fade effects in shaders, since they already have access to the current tick count. get_viewport_x . int get_viewport_x() . get_viewport_y . int get_viewport_y() . get_year . int get_year . inc_npc_level . void inc_npc_level(int party_member_pid) . Takes a party member PID or an NPC name (deprecated, for compatibility with sfall 4.1.5/3.8.15 or earlier) as an argument. The NPC must be in your party. This function ignores player level requirements and the minimum 3 player level delay between NPC level gains. It also ignores the random element, regardless of sfall’s NPCAutoLevel setting. mark_movie_played . void mark_movie_played(int id) . message_str_game . string message_str_game(int fileId, int messageId) . Works exactly the same as message_str, except you get messages from files in text/english/game folder. Use GAME_MSG_* defines or mstr_* macros from sfall.h to use specific msg file . | Additional game msg files added by ExtraGameMsgFileList setting will have consecutive fileIds assigned beginning from 0x2000 to 0x2FFF. (e.g. if you set ExtraGameMsgFileList=foo,bar in ddraw.ini, foo.msg will be associated with 0x2000 and bar.msg with 0x2001.). | If a file has a specific number assigned in ExtraGameMsgFileList, its fileId will be (0x2000 + assigned number). (e.g. with ExtraGameMsgFileList=foo,bar:2,foobar in ddraw.ini, bar.msg will be associated with 0x2002 and foobar.msg with 0x2003.) | . mod_kill_counter . void mod_kill_counter(int critterType, int amount) . resume_game . void resume_game() . set_base_hit_chance_mod . void set_base_hit_chance_mod(int max, int mod) . set_base_pickpocket_mod . void set_base_pickpocket_mod(int max, int mod) . Changes maximum chance of success and chance mod for each steal attempt. max will replace 95% success chance cap (so you can set 100% maximum chance, for instance). mod will add this much percent to each success chance. for example if your chance is 50% and mod is 20, you will get 70% actual success rate . set_critter_hit_chance_mod . void set_critter_hit_chance_mod(CritterPtr, int max, int mod) . set_critter_pickpocket_mod . void set_critter_pickpocket_mod(CritterPtr, int max, int mod) . The same as set_base_pickpocket, but applies only to specific critter. set_hit_chance_max . void set_hit_chance_max(int percentage) . Effects all critters rather than just the player and can set the maximum in range from 0 to 999. set_hp_per_level_mod . void set_hp_per_level_mod(int mod) . set_inven_ap_cost . void set_inven_ap_cost . set_movie_path . void set_movie_path(string filename, int movieid) . set_pickpocket_max . void set_pickpocket_max(int percentage) . Effects all critters rather than just the player and can set the maximum in range from 0 to 999. set_pipboy_available . void set_pipboy_available(int available) . Will only accept 0 or 1 as an argument. Using any other value will cause the function to have no effect. Use 0 to disable the pipboy, and 1 to enable it. set_proto_data . void set_proto_data(int pid, int offset, int value) . Used to alter the in-memory copies of the .pro files Fallout makes when they are loaded. The offset refers to the offset in memory from the start of the proto to the element you are reading. Changes are not stored on disc, and are not permanent. If you modify the protos, and then Fallout subsequently reloads the file your changes will be lost. set_unspent_ap_bonus . void set_unspent_ap_bonus(int multiplier) . Alters the AC bonus you receive per unused action point at the end of your turn in combat. To allow for fractional values, the value given if divided by 4. (Hence the default value is 4 and not 1.) . set_unspent_ap_perk_bonus . void set_unspent_ap_perk_bonus(int multiplier) . Similar to set_unspent_ap_bonus, but effects the extra AC granted by the H2H Evade perk. (The default value of this is also 4, equivalent to doubling the original bonus. set_viewport_x . void set_viewport_x(int view_x) . set_viewport_y . void set_viewport_y(int view_y) . set_xp_mod . void set_xp_mod(int percentage) . sneak_success . int sneak_success . Returns 1 if last sneak attempt (roll against skill) was successful, 0 otherwise. This calls an internal engine function which is used to determine the perception range of critters (which you can override using HOOK_WITHINPERCEPTION). stop_game . void stop_game() . toggle_active_hand . void toggle_active_hand . unwield_slot . void sfall_func2(\"unwield_slot\", object critter, int slot) . unequips an item from the specified slot for a critter or the player can take off player’s equipped item when the inventory is opened, or the player is in the barter screen slot: 0 - armor slot, 1 - right slot, 2 - left slot (see INVEN_TYPE_* in define.h) . ",
     "url": "/sfall-wiki/misc/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/misc/#функции"
   },"120": {
@@ -767,263 +767,263 @@
     "url": "/sfall-wiki/optimization/",
     "relUrl": "/optimization/"
   },"128": {
+    "doc": "Others",
+    "title": "Others",
+    "content": " ",
+    "url": "/sfall-wiki/others/",
+    "relUrl": "/others/"
+  },"129": {
+    "doc": "Others",
+    "title": "Функции",
+    "content": ". | hero_select_win | input_funcs_available | nb_create_char | set_df_model | set_dm_model | set_hero_race | set_hero_style | typeof | . hero_select_win . void hero_select_win(int) . input_funcs_available . int input_funcs_available() . The input functions are only available if the user has the input hook turned on in ddraw.ini. Use input_funcs_available to check. nb_create_char . int nb_create_char() . nb_* functions are reserved for the brotherhood tactical training mod, and should be avoided. set_df_model . void set_df_model(string name) . set_dm_model . void set_dm_model(string name) . set_hero_race . void set_hero_race(int style) . set_hero_style . void set_hero_style(int style) . typeof . int typeof(any value) . Returns type of the given value: VALTYPE_INT, VALTYPE_FLOAT or VALTYPE_STR. ",
+    "url": "/sfall-wiki/others/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+    "relUrl": "/others/#функции"
+  },"130": {
     "doc": "Outline",
     "title": "Outline",
     "content": " ",
     "url": "/sfall-wiki/outline/",
     "relUrl": "/outline/"
-  },"129": {
+  },"131": {
     "doc": "Outline",
     "title": "Функции",
     "content": ". | get_outline | outlined_object | set_outline | . get_outline . funcX . int get_outline(ObjectPtr obj) . Gets the current outline color for an object. outlined_object . funcX . ObjectPtr outlined_object() . Returns an object that is currently highlighted by hovering the mouse above it. set_outline . funcX . void set_outline(ObjectPtr obj, int color) . | sets the outline color of an object (see OUTLINE_* constants in sfall.h) | can also set a custom color from the game palette by shifting the color index value left by 8 bits: 0xCC00 where CC is the palette index (available since sfall 4.2.7/3.8.27) | passing 0 will disable the outline | . ",
     "url": "/sfall-wiki/outline/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/outline/#функции"
-  },"130": {
+  },"132": {
     "doc": "Perks and Traits",
     "title": "Perks and Traits",
     "content": " ",
     "url": "/sfall-wiki/perks-and-traits/",
     "relUrl": "/perks-and-traits/"
-  },"131": {
+  },"133": {
     "doc": "Perks and Traits",
     "title": "Подкатегории",
     "content": ". | NPC perks | . ",
     "url": "/sfall-wiki/perks-and-traits/#%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8",
     "relUrl": "/perks-and-traits/#подкатегории"
-  },"132": {
+  },"134": {
     "doc": "Perks and Traits",
     "title": "Функции",
     "content": ". | apply_heaveho_fix | clear_selectable_perks | get_perk_available | get_perk_owed | has_fake_perk | has_fake_trait | hide_real_perks | perk_add_mode | remove_trait | seq_perk_freq | set_fake_perk | set_fake_trait | set_perk_agl | set_perk_chr | set_perk_desc | set_perk_end | set_perk_freq | set_perk_image | set_perk_int | set_perk_lck | set_perk_level | set_perk_level_mod | set_perk_name | set_perk_owed | set_perk_per | set_perk_ranks | set_perk_skill1 | set_perk_skill1_mag | set_perk_skill2 | set_perk_skill2_mag | set_perk_stat | set_perk_stat_mag | set_perk_str | set_perk_type | set_perkbox_title | set_pyromaniac_mod | set_selectable_perk | set_swiftlearner_mod | show_real_perks | . apply_heaveho_fix . void apply_heaveho_fix . clear_selectable_perks . void clear_selectable_perks() . Restores the “select a perk” box to its default state. get_perk_available . int get_perk_available(int perk) . get_perk_owed . int get_perk_owed . has_fake_perk . int has_fake_perk(string name) . Returns the number of levels the player has of the perks with the given name or ID of extra perk. has_fake_trait . int has_fake_trait(string name) . Returns the number of levels the player has of the traits with the given name or ID of extra trait. hide_real_perks . void hide_real_perks() . Prevent the “select a perk” box from displaying any of the original 119 perks. perk_add_mode . void perk_add_mode(int type) . Modifies what happens when a fake perk is selected from the perks dialog. It is treated as a set of flags - if bit 1 is set then it is added to the player’s traits, if bit 2 is set it is added to the player’s perks, and if bit 3 is set it is removed from the list of selectable perks. The default is 0x2. remove_trait . void remove_trait(int traitID) . seq_perk_freq . void seq_perk_freq(int value) . Sets the number of levels between each perk. set_fake_perk . void set_fake_perk(string name, int level, int image, string desc) . Used to add additional traits and perks to the character screen. They will be saved correctly when the player saves and reloads games, but by themselves they will have no further effect on the character. For perks, the allowed range for levels is between 0 and 100; setting the level to 0 removes that perk. For traits, the level must be 0 or 1. The image is a numeric id that corresponds to an entry in skilldex.lst. The name is limited to 63 characters and the description to 255 characters by sfall, but internal Fallout limits may be lower. set_fake_trait . void set_fake_trait(string name, int active, int image, string desc) . Used to add additional traits and perks to the character screen. They will be saved correctly when the player saves and reloads games, but by themselves they will have no further effect on the character. For perks, the allowed range for levels is between 0 and 100; setting the level to 0 removes that perk. For traits, the level must be 0 or 1. The image is a numeric id that corresponds to an entry in skilldex.lst. The name is limited to 63 characters and the description to 255 characters by sfall, but internal Fallout limits may be lower. set_perk_agl . void set_perk_agl(int perkID, int value) . set_perk_chr . void set_perk_chr(int perkID, int value) . set_perk_desc . void set_perk_desc(int perkID, string value) . set_perk_end . void set_perk_end(int perkID, int value) . set_perk_freq . void set_perk_freq(int value) . Sets the number of levels between each perk. Setting to 0 will reset it back to the default. This overrides the effects of the skilled trait. Not saved into the save game, so needs to be called once per reload. Be careful not to let the player obtain a perk when no perks are available to pick, or the game may crash. set_perk_image . void set_perk_image(int perkID, int value) . set_perk_int . void set_perk_int(int perkID, int value) . set_perk_lck . void set_perk_lck(int perkID, int value) . set_perk_level . void set_perk_level(int perkID, int value) . set_perk_level_mod . void set_perk_level_mod(int levels) . Sets a modifier between +25 and -25 that is added/subtracted from the player’s level for the purposes of deciding which perks can be chosen. set_perk_name . void set_perk_name(int perkID, string value) . set_perk_owed . void set_perk_owed(int value) . set_perk_per . void set_perk_per(int perkID, int value) . set_perk_ranks . void set_perk_ranks(int perkID, int value) . set_perk_skill1 . void set_perk_skill1(int perkID, int value) . set_perk_skill1_mag . void set_perk_skill1_mag(int perkID, int value) . set_perk_skill2 . void set_perk_skill2(int perkID, int value) . set_perk_skill2_mag . void set_perk_skill2_mag(int perkID, int value) . set_perk_stat . void set_perk_stat(int perkID, int value) . set_perk_stat_mag . void set_perk_stat_mag(int perkID, int value) . set_perk_str . void set_perk_str(int perkID, int value) . set_perk_type . void set_perk_type(int perkID, int value) . set_perkbox_title . void set_perkbox_title(string title) . Used to change the title of the “select a perk” box, or by using “” it will be set back to the default. set_pyromaniac_mod . void set_pyromaniac_mod(int bonus) . set_selectable_perk . void set_selectable_perk(string name, int active, int image, string desc) . Used to add additional items to “select a perk” box by setting the ‘active’ parameter to 1, and to remove them again by setting it to 0. set_swiftlearner_mod . void set_swiftlearner_mod(int bonus) . show_real_perks . void show_real_perks() . Reverts the effect os hide_real_perks. ",
     "url": "/sfall-wiki/perks-and-traits/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/perks-and-traits/#функции"
-  },"133": {
+  },"135": {
     "doc": "Pip-Boy",
     "title": "Pip-Boy",
     "content": " ",
     "url": "/sfall-wiki/pip-boy/",
     "relUrl": "/pip-boy/"
-  },"134": {
+  },"136": {
     "doc": "Pip-Boy",
     "title": "Функции",
     "content": ". | set_quest_failure_value | . set_quest_failure_value . void sfall_func2(\"set_quest_failure_value\", int gvarNumber, int thresholdValue) . | sets the threshold value (failure_threshold) for the quest at which the quest will be considered failed (its description in the pipboy will be crossed out and colored red) | gvarNumber: the number of the global variable controlling the quest | thresholdValue: the value of the global variable at which the quest is counted as a failure | . ",
     "url": "/sfall-wiki/pip-boy/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/pip-boy/#функции"
-  },"135": {
+  },"137": {
     "doc": "Read",
     "title": "Read",
     "content": "These functions take a memory address as the parameter and can read arbitrary pieces of Fallout’s address space. ",
     "url": "/sfall-wiki/read/",
     "relUrl": "/read/"
-  },"136": {
+  },"138": {
     "doc": "Read",
     "title": "Функции",
     "content": ". | read_byte | read_int | read_short | read_string | . read_byte . int read_byte(int address) . read_int . int read_int(int address) . read_short . int read_short(int address) . read_string . int read_string(int address) . ",
     "url": "/sfall-wiki/read/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/read/#функции"
-  },"137": {
+  },"139": {
     "doc": "Rest",
     "title": "Rest",
     "content": " ",
     "url": "/sfall-wiki/rest/",
     "relUrl": "/rest/"
-  },"138": {
+  },"140": {
     "doc": "Rest",
     "title": "Функции",
     "content": ". | get_can_rest_on_map | set_can_rest_on_map | . get_can_rest_on_map . funcX . get_can_rest_on_map(int mapNum, int elev) . | returns the set rest value of the map after using the set_can_rest_on_map function | Returns -1 if the rest value of the map was not previously set (i.e. no data for the map in sfalldb.sav) | the can_rest_here values from maps.txt are ignored. | . set_can_rest_on_map . funcX . void set_can_rest_on_map(int mapNum, int elev, bool value) . Allows/disallows to rest on the map for the specified level, overrides the can_rest_here values in maps.txt. | mapNum is the map index from maps.txt | passing -1 to the elev argument will set the rest value for all map elevations | the set rest value will be stored in sfalldb.sav file (in savegame) | . ",
     "url": "/sfall-wiki/rest/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/rest/#функции"
-  },"139": {
+  },"141": {
     "doc": "Функции скриптов",
     "title": "Функции скриптов",
     "content": " ",
     "url": "/sfall-wiki/script-functions/",
     "relUrl": "/script-functions/"
-  },"140": {
+  },"142": {
     "doc": "Функции скриптов",
     "title": "Подкатегории",
     "content": ". | Stats | Skills | Shaders graphics | Perks and Traits | Maps and Encounters | Sound | Maths (Математические) | Keyboard and Mouse | Explosions | Animations | Art | Tiles and Paths | Разное | Strings | Interface | Combat | Car | Locks | INI settings | Objects and scripts | . ",
     "url": "/sfall-wiki/script-functions/#%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8",
     "relUrl": "/script-functions/#подкатегории"
-  },"141": {
+  },"143": {
     "doc": "Sfall version",
     "title": "Sfall version",
     "content": " ",
     "url": "/sfall-wiki/sfall-version/",
     "relUrl": "/sfall-version/"
-  },"142": {
+  },"144": {
     "doc": "Sfall version",
     "title": "Функции",
     "content": ". | sfall_ver_build | sfall_ver_major | sfall_ver_minor | . sfall_ver_build . int sfall_ver_build() . sfall_ver_major . int sfall_ver_major() . sfall_ver_minor . int sfall_ver_minor() . ",
     "url": "/sfall-wiki/sfall-version/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/sfall-version/#функции"
-  },"143": {
+  },"145": {
     "doc": "Shaders graphics",
     "title": "Shaders graphics",
     "content": "The graphics functions are only available if the user is using graphics mode 4 or 5. Use graphics_funcs_available to check; it returns 1 if you can use them or 0 if you can’t. Calling graphics functions when graphics_funcs_available returns 0 will do nothing. ",
     "url": "/sfall-wiki/shaders-graphics/",
     "relUrl": "/shaders-graphics/"
-  },"144": {
+  },"146": {
     "doc": "Shaders graphics",
     "title": "Функции",
     "content": ". | activate_shader | deactivate_shader | force_graphics_refresh | free_shader | get_screen_height | get_screen_width | get_shader_texture | get_shader_version | graphics_funcs_available | load_shader | set_palette | set_shader_float | set_shader_int | set_shader_mode | set_shader_texture | set_shader_vector | . activate_shader . void activate_shader(int ID) . deactivate_shader . void deactivate_shader(int ID) . force_graphics_refresh . void force_graphics_refresh(bool enabled) . Forces the screen to redraw at times when it normally wouldn’t. If you’re using animated shader, turning this option on is recommended. free_shader . void free_shader(int ID) . get_screen_height . int get_screen_height() . get_screen_width . int get_screen_width() . get_shader_texture . int get_shader_texture(int ID, int texture) . get_shader_version . int get_shader_version . Gives you the highest shader version supported by the player’s graphics cards. Possible return values are 11, 12, 13, 14, 20, 21 and 30. graphics_funcs_available . bool graphics_funcs_available . load_shader . int load_shader(string path) . Takes a path relative to the &lt;GameRoot&gt;\\&lt;master_patches&gt;\\shaders\\ directory as an argument and returns a shader ID. That ID should be passed as the first argument to all other shader functions, and is valid until free_shader is called on the ID, the player loads a saved game or the player quits to the main menu. set_palette . void set_palette(string path) . set_shader_float . void set_shader_float(int ID, string param, float value) . set_shader_int . void set_shader_int(int ID, string param, int value) . set_shader_mode . void set_shader_mode(int mode) . Tells sfall when to use a shader. The parameter is a set of 32 flags which specify the screens on which the shader will be disabled, unless bit 32 is set, in which case the shader will only be active on those screens. Remember that screens are displayed on top of each other; if the player opens the character menu which in combat, the game still considers the player to be in combat. See sfall.h for a list of defines. set_shader_texture . void set_shader_texture(int ID, string param, int texID) . set_shader_vector . void set_shader_vector(int ID, string param, float f1, float f2, float f3, float f4) . ",
     "url": "/sfall-wiki/shaders-graphics/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/shaders-graphics/#функции"
-  },"145": {
+  },"147": {
     "doc": "Skills",
     "title": "Skills",
     "content": " ",
     "url": "/sfall-wiki/skills/",
     "relUrl": "/skills/"
-  },"146": {
+  },"148": {
     "doc": "Skills",
     "title": "Функции",
     "content": ". | get_available_skill_points | get_critter_skill_points | mod_skill_points_per_level | set_available_skill_points | set_base_skill_mod | set_critter_skill_mod | set_critter_skill_points | set_skill_max | . get_available_skill_points . int get_available_skill_points() . get_critter_skill_points . int get_critter_skill_points(int critter, int skill) . Will get the number of additional points a critter has in a skill, on top of whatever they have from their stats and other bonuses . mod_skill_points_per_level . void mod_skill_points_per_level(int value) . Accepts a value of between -100 and 100, and modifies the number of skill points the player recieves when they level up. This is a modification of what would otherwise happen, rather than a replacement. The value is not saved into the save game, so should be reset in the game_loaded section of a script. set_available_skill_points . void set_available_skill_points(int value) . set_base_skill_mod . void set_base_skill_mod(int max) . set_critter_skill_mod . void set_critter_skill_mod(CritterPtr, int max) . set_critter_skill_points . void set_critter_skill_points(int critter, int skill, int value) . Will set the number of additional points a critter has in a skill, on top of whatever they have from their stats and other bonuses. Note that skill points are part of the proto, so calling it on a critter will affect all critters that share the same proto. set_skill_max . void set_skill_max(int value) . Can’t be used to increase the skill cap above 300. ",
     "url": "/sfall-wiki/skills/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/skills/#функции"
-  },"147": {
+  },"149": {
     "doc": "Sound",
     "title": "Sound",
     "content": " ",
     "url": "/sfall-wiki/sound/",
     "relUrl": "/sound/"
-  },"148": {
+  },"150": {
     "doc": "Sound",
     "title": "Функции",
     "content": ". | eax_available | play_sfall_sound | set_eax_environment | stop_sfall_sound | . eax_available . int eax_available . play_sfall_sound . int play_sfall_sound(string file, int mode) . Used to play mp3/wav/wma files. The path given is relative to the Fallout folder. Specify mode as 1 to loop the file continuously, 2 to replace the current background game music with playing the specified file in loop mode, or 0 to play the file once. If you don’t wish to loop, play_sfall_sound returns 0. If you do loop, it returns an id which can be passed back to stop_sfall_sound when you want to stop the effect. All sounds effects will be stopped on game reload, looping or not. Does not require AllowDShowSound to be set to 1 in ddraw.ini. Starting from sfall 4.2.8/3.8.28, you can pass a value in the mode argument for a reduced sound volume. To set the volume, You need to convert the number to hexadecimal and use the argument format 0xZZZZ000Y, where ZZZZ is the volume reduction value in range from 0 to 32767 (the value 32767 is mute), and Y is the playback mode. set_eax_environment . void set_eax_environment(int environment) . stop_sfall_sound . void stop_sfall_sound(int soundID) . Stops looping mp3/wav/wma files previously launched by play_sfall_sound. All sounds effects will be stopped on game reload, looping or not. Does not require AllowDShowSound to be set to 1 in ddraw.ini. ",
     "url": "/sfall-wiki/sound/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/sound/#функции"
-  },"149": {
+  },"151": {
     "doc": "Компилятор (sslc)",
     "title": "SSLC",
     "content": ". | Command line options | Additional supported syntax | int2ssl note | Fixes | Backward compatibility | . This is a modified copy of sslc, that has a few bugfixes from the original, that will recognise and compile the additional scripting functions provided by sfall, that can also understand some additional syntax, and that has an integrated preprocessor and optimizer. Unlike the original script compiler, this has not been compiled as a dos program. When using this in place of the original compile.exe but still using p.bat, you need to either get rid of the dos4gw.exe reference from p.bat or replace the original dos4gw.exe with the one in this archive. If you use fallout script editor, you can extract compile.exe and dos4gw.exe to its \\binary folder, or extract them somewhere else and change your preferences in FSE to point there. FSE doesn’t seem to be able to tell when errors occur when using this compiler though, so I’d recommend either using sfall’s script editor instead or compiling by hand if possible. When compiling global or hook scripts for sfall 3.4 or below, you must include the line procedure start; before any #includes that define procedures to avoid a few weird problems. (this is no longer required starting from 3.5) . This version of compiler was designed primarily for new sfall functions, but it can safely (and is recommended) to be used with non-sfall scripts as well, as long as you don’t use any of the arrays syntax and any sfall scripting functions. The original unmodified sslc source is over here: http://www.teamx.ru/eng/files/srcs/index.shtml. ",
     "url": "/sfall-wiki/sslc/#sslc",
     "relUrl": "/sslc/#sslc"
-  },"150": {
+  },"152": {
     "doc": "Компилятор (sslc)",
     "title": "Command line options",
     "content": "-q don't wait for input on error -n no warnings -b backward compatibility mode -l no logo -p preprocess source -O optimize code (full, see optimization.txt) -O&lt;N&gt; set specific level of optimization (0 - off, 1 - basic, 2 - full, 3 - experimental) -d print debug messages -D output an abstract syntax tree of the program -o set output path (follows the input file name) -s enable short-circuit evaluation for all AND, OR operators -m&lt;macro[=val]&gt; define a macro named \"macro\" for conditional compilation -I&lt;path&gt; specify an additional directory to search for include files . The original command line option -w to turn on warnings no longer has an effect, since warnings are now on by default . ",
     "url": "/sfall-wiki/sslc/#command-line-options",
     "relUrl": "/sslc/#command-line-options"
-  },"151": {
+  },"153": {
     "doc": "Компилятор (sslc)",
     "title": "Additional supported syntax",
     "content": "Syntax which requires sfall for compiled scripts to be interpreted, is marked by asterix (*). | Optional arguments in user-defined procedures. You can only use constants for default values. It basically puts those constants in place of omitted arguments. | new: procedure test(variable x, variable y := 0, variable z := -1) begin ... end ... call test(\"value\"); . | old: procedure test(variable x, variable y, variable z) begin ... end ... call test(\"value\", 0, -1); . | . | New logical operators AndAlso, OrElse for short-circuit evaluation of logical expressions. Using these operators allow the right part of logical expressions not to be evaluated (executed, computed) if the result is already known. This can improve the performance of running scripts. Example: if (obj andAlso obj_pid(obj) == PID_STIMPAK) then ... If obj is null, the second condition will not be checked and your script won’t fail with “obj is null” error in debug.log . This also has an effect that a value of last computed argument is returned as a result of whole expressions, instead of always 0 (false) or 1 (true): . obj := false; display_msg(obj orElse \"something\"); // will print \"something\" . You can also use the -s option to enable short-circuit evaluation for all the AND, OR operators in the script. NOTE: Be aware that it may break some old scripts because operators behavior is changed slightly. | Conditional expressions (Python-inspired), also known as ternary operator: . | new: X := value1 if condition else value2 . | old: if (condition) then X := value1; else X := value2; . | . | To assign values, you can use the alternative assignment operator from C/Java instead of Pascal syntax. | new: x = 5; . | old: x := 5; . | . | Multiple variable declaration: Multiple variables can be declared on one line, seperated by commas. This is an alterative to the ugly begin/end block, or the bulky single variable per line style. | new: variable a, b, c; . | old: variable begin a; b; c; end . | Variable initialization with expressions: You can now initialize local variables with complex expressions instead of constants. | new: variable tile := tile_num(dude_obj); . | old: variable tile; tile := tile_num(dude_obj); . NOTE: if your expression starts with a constant (eg. 2+2), enclose it in parentheses, otherwise compiler will be confused and give you errors. | . | Hexadecimal numerical constants: Simply prefix a number with 0x to create a hexadecimal. The numbers 0 to 9 and a-f are allowed in the number. The number may not have a decimal point. | new: a := 0x1000; . | old: a := 4096; . | . | Increment/decrement operators: ++ and -- can be used as shorthand for +=1 and -=1 respectively. They are mearly a syntactic shorthand to improve readability, and so their use is only allowed where +=1 would normally be allowed. | new: a++; . | old: a += 1; . | . | break &amp; continue statements: they work just like in most high-level languages. break jumps out of the loop. continue jumps right to the beginning of the next iteration (see for and foreach sections for additional details). | new: while (i &lt; N) begin // ... if (/* some condition */) then break; // ... end . | old: while (i &lt; N and not(breakFlag)) begin // ... if (/* condition */) then breakFlag := true; // ... end . | new: for (i := 0; i &lt; N; i++) begin // ... if (/* condition */) then begin // action continue; end // else actions end . | old: for (i := 0; i &lt; N; i++) begin // ... if (/* condition */) then begin // action end else begin // else actions end end . | . | for loops: Another piece of syntactic shorthand, to shorten while loops in many cases. Parentheses around the loop statements are recommended but not required (when not using parentheses, a semicolon is required after the 3rd loop statement). | new: for (i := 0; i &lt; 5; i++) begin display_msg(\"i = \"+i); end . | old: i := 0; while (i &lt; 5) do begin display_msg(\"i = \"+i); i++; end . NOTE: continue statement in a for loop will recognize increment statement (third statement in parentheses) and will execute it before jumping back to the beginning of loop. This way you will not get an endless loop. | . | switch statements: A shorthand way of writing big if then else if... blocks . | new: switch get_attack_type begin case ATKTYPE_PUNCH: display_msg(\"punch\"); case ATKTYPE_KICK: display_msg(\"kick\"); default: display_msg(\"something else\"); end . | old: variable tmp; tmp := get_attack_type; if tmp == ATKTYPE_PUNCH then begin display_msg(\"punch\"); end else if tmp == ATKTYPE_KICK then begin display_msg(\"kick\"); end else begin display_msg(\"something else\"); end . | . | empty statements in blocks are allowed: This is just a convenience to save scripters a bit of memory. Some of the macros in the fallout headers include their own semicolons while others do not. With the original compiler you had to remember which was which, and if you got it wrong the script would not compile. Now it’s always safe to include your own semicolon, even if the macro already had its own. For example, this would not compile with the original sslc, but will with the sfall edition: #define my_macro diplay_msg(\"foo\"); procedure start begin my_macro; end . | Procedure stringify operator @: designed to make callback-procedures a better option and allow for basic functional programming. Basically it replaces procedure names preceeded by @ by a string constant. Not many people know that since vanilla Fallout you can call procedures by “calling a variable” containing it’s name as a string value. There was a couple of problems using this: . | optimizer wasn’t aware that you are referencing a procedure, and could remove it, if you don’t call it explicitly (can be solved by adding making procedure “critical”) | you couldn’t see all references of a procedure from a Script Editor | it was completely not obvious that you could do such a thing, it was a confusing syntax | old: callbackVar := \"Node000\"; callbackVar(); . | new: callbackVar := @Node000; callbackVar(); . | . | *arrays: In vanilla fallout arrays had to be constructed by reserving a block of global/map variables. Since sfall 2.7, specific array targeted functions have been available, but they are fairly messy and long winded to use. The compiler provides additional syntactic shorthand for accessing and setting array variables, as well as for array creation. When declaring an array variable, put a constant integer in []’s to give the number of elements in the array. (before sfall 3.4 you had to specify size in bytes for array elements, now it’s not required, see “arrays.txt” for more information) . | new: procedure bingle begin variable a[2]; a[0] := 5; a[a[0] - 4] := a[0] + 4; display_msg(\"a[0]=\" + a[0] + \", a[1]=\" + a[1]); end . | old: procedure bingle begin variable a; a := temp_array(2, 4); set_array(a, 0, 5); set_array(a, get_array(a, 0) - 4, get_array(a, 0) + 4); display_msg(\"a[0]=\" + get_array(a, 0) + \", a[1]=\" + get_array(a, 1)); end . | . | *array expressions: sometimes you need to construct an array of elements and you will probably want to do it in just one expression. This is now possible: . | new: list := [\"A\", \"B\", \"C\", \"D\"]; . | old: list := temp_array(4, 2); list[0] := \"A\"; list[1] := \"B\"; list[2] := \"C\"; list[3] := \"D\"; . Syntax specific for associative arrays is also available. (see “arrays.txt” for full introduction to this type of arrays). | . | *map array expressions: map := {5: \"five\", 10: \"ten\", 15: \"fifteen\", 20: \"twelve\"}; . | . | “dot” syntax to access elements of associative arrays. “dot” syntax allows to work with arrays like objects: trap.radius := 3; trap.tile := tile_num(dude_obj); . You can chain dot and bracket syntax to access elements of multi-dimensional arrays: . collectionList[5].objectList[5].name += \" foo\"; . | . NOTE: when using incremental operators like +=, *=, ++, -- compiler will use additional temp variable to get an array at penultimate level in order to avoid making the same chain of “get_array” calls twice. | . | foreach loops: A shorthand method of looping over all elements in an array. Syntax is foreach (&lt;symbol&gt; in &lt;expression&gt;). | new: procedure bingle begin variable critter; foreach (critter in list_as_array(LIST_CRITTERS)) begin display_msg(\"\"+critter); end end . | old: procedure bingle begin variable begin critter; array; len; count; end array := list_as_array(LIST_CRITTERS); len := len_array(array); count := 0; while count &lt; len do begin critter := array[count]; display_msg(\"\" + critter); end end . If you want an index array element (or key for “maps”) at each iteration, use syntax: foreach (&lt;symbol&gt;: &lt;symbol&gt; in &lt;expression&gt;) . foreach (pid: price in itemPriceMap) begin if (itemPid == pid) then itemPrice := price; end . If you want to add additional condition for continuing the loop, use syntax: foreach (&lt;symbol&gt; in &lt;expression&gt; while &lt;expression&gt;). In this case loop will iterate over elements of an array until last element or until “while” expression is true (whatever comes first). | . NOTE: just like for loop, “continue” statement will respect increments of a hidden counter variable, so you can safely use it inside foreach. | . ",
     "url": "/sfall-wiki/sslc/#additional-supported-syntax",
     "relUrl": "/sslc/#additional-supported-syntax"
-  },"152": {
+  },"154": {
     "doc": "Компилятор (sslc)",
     "title": "int2ssl note",
     "content": "int2ssl by Anchorite (TeamX) is included in sfall modderspack package. It was updated to support all additional opcodes of sfall, along with some syntax features. You can use it to decompile any sfall or non-sfall script. ",
     "url": "/sfall-wiki/sslc/#int2ssl-note",
     "relUrl": "/sslc/#int2ssl-note"
-  },"153": {
+  },"155": {
     "doc": "Компилятор (sslc)",
     "title": "Fixes",
     "content": ". | playmoviealpharect was using the token for playmoviealpha, breaking both functions in the process. | addbuttonflag had an entry in the token table, and could be parsed, but was missing an entry in the emit list. This resulted in the compiler accepting it as a valid function, but not outputting any code for it into the compiled script. | The function tokenize was missing an entry in the token table, and so would not be recognised by the compiler. | Fixed the check for the call \"foo\" syntax so that non-string constants will no longer be accepted. | . ",
     "url": "/sfall-wiki/sslc/#fixes",
     "relUrl": "/sslc/#fixes"
-  },"154": {
+  },"156": {
     "doc": "Компилятор (sslc)",
     "title": "Backward compatibility",
     "content": "There are several changes in this version of sslc which may result in problems for previously working scripts. A new command line option -b is available, which will turn off all new fixes and features which have the possibility of causing a previously compiling script to change its behaviour. (And only those features; anything which would not compile under the old sslc is not affected.) This includes the following: . | Since for, foreach, break, continue, in and tokenize are now hardcoded names, existing scripts that use any of them as a variable or procedure name will no longer compile. | Missing a semicolon after a variable declaration is now a hard error. (Originally sslc would check for the semicolon, but would not complain if it was missing.) | The function addbuttonflag used to be recognised by the compiler, but would not emit any code into the int file. | The function playmoviealpharect compiled as playmoviealpha. | . ",
     "url": "/sfall-wiki/sslc/#backward-compatibility",
     "relUrl": "/sslc/#backward-compatibility"
-  },"155": {
+  },"157": {
     "doc": "Компилятор (sslc)",
     "title": "Компилятор (sslc)",
     "content": " ",
     "url": "/sfall-wiki/sslc/",
     "relUrl": "/sslc/"
-  },"156": {
+  },"158": {
     "doc": "Stats min/max",
     "title": "Stats min/max",
     "content": "The set_stat_max/min functions can be used to set the valid ranges on stats. Values returned by get_current_stat will be clamped to this range. The set_pc_ function only affects the player, the set_npc_ functions only affects other critters, and the set_ functions affects both. ",
     "url": "/sfall-wiki/stats-min-max/",
     "relUrl": "/stats-min-max/"
-  },"157": {
+  },"159": {
     "doc": "Stats min/max",
     "title": "Функции",
     "content": ". | set_npc_stat_max | set_npc_stat_min | set_pc_stat_max | set_pc_stat_min | set_stat_max | set_stat_min | . set_npc_stat_max . void set_npc_stat_max(int stat, int value) . set_npc_stat_min . void set_npc_stat_min(int stat, int value) . set_pc_stat_max . void set_pc_stat_max(int stat, int value) . set_pc_stat_min . void set_pc_stat_min(int stat, int value) . set_stat_max . void set_stat_max(int stat, int value) . set_stat_min . void set_stat_min(int stat, int value) . ",
     "url": "/sfall-wiki/stats-min-max/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/stats-min-max/#функции"
-  },"158": {
+  },"160": {
     "doc": "Stats",
     "title": "Stats",
     "content": "The get/set_pc_base/extra_stat functions are equivalent to calling get/set_critter_base/extra_stat with dude_obj as the critter pointer. None of these stat functions take perks into account, and neither do they do range clamping to make sure the stats are valid. Use the normal get_critter_stat function to get a correctly perk adjusted and range clamped value for a stat. ",
     "url": "/sfall-wiki/stats/",
     "relUrl": "/stats/"
-  },"159": {
+  },"161": {
     "doc": "Stats",
     "title": "Подкатегории",
     "content": ". | Stats min/max | . ",
     "url": "/sfall-wiki/stats/#%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8",
     "relUrl": "/stats/#подкатегории"
-  },"160": {
+  },"162": {
     "doc": "Stats",
     "title": "Функции",
     "content": ". | get_critter_base_stat | get_critter_extra_stat | get_pc_base_stat | get_pc_extra_stat | get_stat_max | get_stat_min | set_critter_base_stat | set_critter_extra_stat | set_pc_base_stat | set_pc_extra_stat | . get_critter_base_stat . int get_critter_base_stat(CritterPtr, int StatID) . get_critter_extra_stat . int get_critter_extra_stat(CritterPtr, int StatID) . get_pc_base_stat . int get_pc_base_stat(int StatID) . get_pc_extra_stat . int get_pc_extra_stat(int StatID) . get_stat_max . get_stat_max(int stat, bool who = False) . | Returns the maximum set value of the specified stat (see set_stat_max functions) | who: 0 (false) or omitting the argument - returns the value of the player, 1 (true) - returns the value set for other critters | . get_stat_min . get_stat_min(int stat, bool who = False) . | Returns the minimum set value of the specified stat (see set_stat_min functions) | who: 0 (false) or omitting the argument - returns the value of the player, 1 (true) - returns the value set for other critters | . set_critter_base_stat . void set_critter_base_stat(CritterPtr, int StatID, int value) . set_critter_extra_stat . void set_critter_extra_stat(CritterPtr, int StatID, int value) . set_pc_base_stat . void set_pc_base_stat(int StatID, int value) . set_pc_extra_stat . void set_pc_extra_stat(int StatID, int value) . ",
     "url": "/sfall-wiki/stats/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/stats/#функции"
-  },"161": {
+  },"163": {
     "doc": "Strings",
     "title": "Strings",
     "content": " ",
     "url": "/sfall-wiki/strings/",
     "relUrl": "/strings/"
-  },"162": {
+  },"164": {
     "doc": "Strings",
     "title": "Функции",
     "content": ". | atof | atoi | charcode | get_string_pointer | sprintf | string_format | string_split | string_to_case | strlen | substr | . atof . float atof(string text) . atoi . int atoi(string text) . charcode . int charcode(string text) . Returns ASCII code for the first character in given string. get_string_pointer . funcX . int get_string_pointer(string text) . Returns a pointer to a string variable or to a text. sprintf . string sprintf(string format, any value) . Formats given value using standart syntax of C printf function (google “printf” for format details). However it is limited to formatting only 1 value. Can be used to get character by ASCII code (“%c”). string_format . funcX . string string_format(string format, any val1, any val2, ...) . Formats given value using standard syntax of C printf function (google “printf” for format details). However it is limited to formatting up to 4 values. | formatting is only supported for %s and %d, and the format string is limited to 1024 characters | . string_split . array string_split(string, split) . Takes a string and a seperator, searches the string for all instances of the seperator, and returns a temp array filled with the pieces of the string split at each instance. If you give an empty string as the seperator, the string is split into individual characters. You can use this to search for a substring in a string like this: strlen(get_array(string_split(haystack, needle), 0)) . string_to_case . string sfall_func2(\"string_to_case\", string text, int toCase) . Converts all letters in the given string to the specified case. toCase: 0 - lowercase, 1 - uppercase . NOTE: this function works only for English letters of A-Z/a-z. strlen . int strlen(string text) . Returns string length. substr . string substr(string, start, length) . Cuts a substring from a string starting at “start” up to “length” characters. The first character position is 0 (zero). | If start is negative - it indicates starting position from the end of the string (for example substr(\"test\", -2, 2) will return last 2 charactes: “st”). | If length is negative - it means so many characters will be omitted from the end of string (example: substr(\"test\", 0, -2) will return string without last 2 characters: “te”). | If length is zero - it will return a string from the starting position to the end of the string New behavior for sfall 4.2.2/3.8.22 | . ",
     "url": "/sfall-wiki/strings/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/strings/#функции"
-  },"163": {
+  },"165": {
     "doc": "Системные функции",
     "title": "Системные функции",
     "content": " ",
     "url": "/sfall-wiki/system-functions/",
     "relUrl": "/system-functions/"
-  },"164": {
+  },"166": {
     "doc": "Системные функции",
     "title": "Подкатегории",
-    "content": ". | Direct memory access | Virtual file system | Variables | Sfall version | Метафункции (FuncX) | . ",
+    "content": ". | Direct memory access | Virtual file system | Метафункции (FuncX) | Sfall version | Others | . ",
     "url": "/sfall-wiki/system-functions/#%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8",
     "relUrl": "/system-functions/#подкатегории"
-  },"165": {
+  },"167": {
     "doc": "Tags",
     "title": "Tags",
     "content": "show_iface_tag, hide_iface_tag and is_iface_tag_active relate to the boxes that appear above the interface such as SNEAK and LEVEL. You can use 3 for LEVEL and 4 for ADDICT, or the range from 5 to (4 + the value of BoxBarCount in ddraw.ini) for custom boxes. Remember to add your messages to intrface.msg and set up the font colours in ddraw.ini if you’re going to use custom boxes. Starting from sfall 4.1/3.8.12, is_iface_tag_active can also be used to check 0 for SNEAK, 1 for POISONED, and 2 for RADIATED. ",
     "url": "/sfall-wiki/tags/",
     "relUrl": "/tags/"
-  },"166": {
+  },"168": {
     "doc": "Tags",
     "title": "Функции",
     "content": ". | add_iface_tag | hide_iface_tag | is_iface_tag_active | set_iface_tag_text | show_iface_tag | . add_iface_tag . funcX . void add_iface_tag() . Adds one custom box to the current boxes, and returns the number of the added tag (-1 if the tags limit is exceeded. The maximum number of boxes is limited to 126 tags. hide_iface_tag . void hide_iface_tag(int tag) . is_iface_tag_active . int is_iface_tag_active(int tag) . Starting from sfall 4.1, can also be used to check 0 for SNEAK, 1 for POISONED, and 2 for RADIATED. set_iface_tag_text . funcX . void set_iface_tag_text(int tag, string text, int color) . Sets the text messages and colors for custom notification boxes to the interface without the need to add messages to intrface.msg and set up the font colors in ddraw.ini. Tag value is the same as used in show_iface_tag, hide_iface_tag, and is_iface_tag_active. The valid range is from 5 to (4 + the value of BoxBarCount in ddraw.ini) or the number of the last custom box added using the add_iface_tag function. The text is limited to 19 characters. show_iface_tag . void show_iface_tag(int tag) . ",
     "url": "/sfall-wiki/tags/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/tags/#функции"
-  },"167": {
+  },"169": {
     "doc": "Tiles and Paths",
     "title": "Tiles and Paths",
     "content": " ",
     "url": "/sfall-wiki/tiles-and-paths/",
     "relUrl": "/tiles-and-paths/"
-  },"168": {
+  },"170": {
     "doc": "Tiles and Paths",
     "title": "Функции",
     "content": ". | get_tile_fid | obj_blocking_line | obj_blocking_tile | path_find_to | tile_by_position | tile_get_objs | tile_light | tile_refresh_display | tile_under_cursor | . get_tile_fid . int get_tile_fid(int tile) . obj_blocking_line . ObjectPtr obj_blocking_line(ObjectPtr objFrom, int tileTo, int blockingType) . Returns first object which blocks direct linear path from objFrom to tileTo using selected blocking function (see BLOCKING_TYPE_* constants in sfall.h). If path is clear (no blocker was encountered by selected function) - returns 0. objFrom is always excluded from calculations, but is required to be a valid object. obj_blocking_tile . ObjectPtr obj_blocking_tile(int tileNum, int elevation, int blockingType) . Returns first object blocking given tile using given blocking function or 0 if tile is clear. path_find_to . array path_find_to(ObjectPtr objFrom, int tileTo, int blockingType) . Returns the shortest path to a given tile using given blocking function as an array of tile directions (0..5) to move on each step. Array length equals to a number of steps. Empty array means that specified target cannot be reached. tile_by_position . funcX . int tile_by_position(int x, int y) . | returns the tile number at the x, y position relative to the top-left corner of the screen | if the position is outside of the range of tiles, it will return -1 | . tile_get_objs . array tile_get_objs(int tileNum, int elevation) . Returns an array of all objects at given tile. It will include any hidden, dead or system objects (like cursor), so make sure to check properly when iterating. tile_light . int tile_light(int elevation, int tileNum) . Returns light intensity at the given tile in range from 0 to 65535. tile_refresh_display . void tile_refresh_display() . Redraws the game scene (tiles, walls, objects, etc.). tile_under_cursor . int tile_under_cursor . ",
     "url": "/sfall-wiki/tiles-and-paths/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/tiles-and-paths/#функции"
-  },"169": {
-    "doc": "Variables",
-    "title": "Variables",
-    "content": " ",
-    "url": "/sfall-wiki/variables/",
-    "relUrl": "/variables/"
-  },"170": {
-    "doc": "Variables",
-    "title": "Функции",
-    "content": ". | input_funcs_available | set_hero_race | set_hero_style | typeof | . input_funcs_available . int input_funcs_available() . The input functions are only available if the user has the input hook turned on in ddraw.ini. Use input_funcs_available to check. set_hero_race . void set_hero_race(int style) . set_hero_style . void set_hero_style(int style) . typeof . int typeof(any value) . Returns type of the given value: VALTYPE_INT, VALTYPE_FLOAT or VALTYPE_STR. ",
-    "url": "/sfall-wiki/variables/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
-    "relUrl": "/variables/#функции"
   },"171": {
     "doc": "Virtual file system",
     "title": "Virtual file system",
