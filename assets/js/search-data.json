@@ -37,7 +37,7 @@
   },"6": {
     "doc": "Массивы (Arrays)",
     "title": "Синтаксис массивов",
-    "content": "В основном массивы реализуются с использованием ряда новых операторов (функций сценариев). Но для удобства использования есть некоторые новые элементы синтаксиса: . | Доступ к элементам. Используйте квадратные скобки: display_msg(arr[5]); mymap[\"price\"] := 515.23; . | Альтернативный доступ к картам. Используйте точку: display_msg(mymap.name); mymap.price := 232.23; . | Выражения массива. Создавайте и заполняйте массивы просто используя одно выражение: // create list with 5 values [5, 777, 0, 3.14, \"Cool Value\"] // create map: {5: \"Five\", \"health\": 50, \"speed\": 0.252} . NOTES: Обязательно вызовите fix_array, если вы хотите, чтобы новый массив был доступен в следующем фрейме выполнения сценария, или save_array, если вы хотите использовать его в течение более длительного периода (подробнее см. следующий раздел). | Перебор элементов массива в цикле. Используйте ключевое слово foreach следующим образом: foreach (item in myarray) begin // этот блок выполняется для каждого элемента массива, где \"item\" содержит текущее значение на каждом шаге итерации end // альтернативный синтаксис: foreach (key: item in myarray) begin // \"key\" будет содержать текущий ключ (или числовой индекс, для списков) end . | . См. описание копмилятра sslc или файл sslc_readme.md для получения полной информации о новых функциях синтаксиса SSL. ",
+    "content": "В основном массивы реализуются с использованием ряда новых операторов (функций сценариев). Но для удобства использования есть некоторые новые элементы синтаксиса: . | Доступ к элементам. Используйте квадратные скобки: display_msg(arr[5]); mymap[\"price\"] := 515.23; . | Альтернативный доступ к картам. Используйте точку: display_msg(mymap.name); mymap.price := 232.23; . | Выражения массива. Создавайте и заполняйте массивы просто используя одно выражение: // create list with 5 values [5, 777, 0, 3.14, \"Cool Value\"] // create map: {5: \"Five\", \"health\": 50, \"speed\": 0.252} . NOTES: Обязательно вызовите fix_array, если вы хотите, чтобы новый массив был доступен в следующем фрейме выполнения сценария, или save_array, если вы хотите использовать его в течение более длительного периода (подробнее см. следующий раздел). | Перебор элементов массива в цикле. Используйте ключевое слово foreach следующим образом: foreach (item in myarray) begin // этот блок выполняется для каждого элемента массива, где \"item\" содержит текущее значение на каждом шаге итерации end // альтернативный синтаксис: foreach (key: item in myarray) begin // \"key\" будет содержать текущий ключ (или числовой индекс, для списков) end . | . Обратитесь к описанию копмилятра sslc или к файлу sslc_readme.md для получения полной информации о новых функциях синтаксиса SSL. ",
     "url": "/sfall-wiki/arrays/#%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81-%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%BE%D0%B2",
     "relUrl": "/arrays/#синтаксис-массивов"
   },"7": {
@@ -163,7 +163,7 @@
   },"27": {
     "doc": "Типы данных",
     "title": "Типы данных",
-    "content": "Типы данных, упомянутые в документации. | array - идентификатор (ID) массива для использования с функциями, связанные с массивами (ID это фактически целое число) | any - любой тип | bool - логическое значение (фактически это тип int: True равно 1, а False равно 0) | int - целое число | mixed - тип зависит от конкретного случая использования | float - число с плавающей запятой | ObjectPtr - указатель на игровой объект (фактически целое число) | proc - имя процедуры (используется в register_hook_proc) | string - строковое (текстовое) значение | void - означает, что код операции не возвращает никакого значения | . Вы можете узнать тип переменной использую sfall функцию: typeof . ",
+    "content": "Типы данных, упомянутые в документации. | array - ID идентификатор массива для использования с функциями, связанные с массивами (ID это фактически целое число) | any - любой тип | bool - логическое значение (фактически это тип int где: True равно 1, а False равно 0) | int - целое число | mixed - тип зависит от конкретного случая использования | float - число с плавающей запятой | ObjectPtr - указатель на игровой объект (фактически целое число) | proc - имя процедуры (используется в register_hook_proc) | string - строковое (текстовое) значение | void - означает, что код операции не возвращает никакого значения | . Вы можете узнать значение типа переменной использую sfall функцию: typeof . ",
     "url": "/sfall-wiki/data-types/",
     "relUrl": "/data-types/"
   },"28": {
@@ -570,10 +570,10 @@
     "relUrl": "/hooks/"
   },"95": {
     "doc": "Документация",
-    "title": "Getting started",
-    "content": "To get started with sfall, first familiarize yourself with new concepts: . | Global scripts and variables. | Arrays and lists. | Hooks. | Data types. | Object and script manipulation. | . Pay special attention to the best practices page. Also, take a look at SSLC features and optimization guide. Next, proceed to discover new functions. They are categorized, use the menu to find the one you need. If you can’t, check uncategorized functions list and sfall macros. Also, there’s search at the top of the page. Note that this is documentation for sfall specifically, not Fallout scripting in general. For vanilla function reference, refer to the wiki. Документация на английском языке: https://phobos2077.github.io/sfall/. ",
-    "url": "/sfall-wiki/#getting-started",
-    "relUrl": "/#getting-started"
+    "title": "Начало работы",
+    "content": "To get started with sfall, first familiarize yourself with new concepts: . | Global scripts and variables. | Arrays and lists. | Hooks. | Data types. | Object and script manipulation. | . Pay special attention to the best practices page. Also, take a look at SSLC features and optimization guide. Next, proceed to discover new functions. They are categorized, use the menu to find the one you need. If you can’t, check uncategorized functions list and sfall macros. Also, there’s search at the top of the page. Note that this is documentation for sfall specifically, not Fallout scripting in general. For vanilla function reference, refer to the wiki. Альтернативаня документация на английском языке: Перейти . ",
+    "url": "/sfall-wiki/#%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BE-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B",
+    "relUrl": "/#начало-работы"
   },"96": {
     "doc": "Документация",
     "title": "Документация",
