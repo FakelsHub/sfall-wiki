@@ -163,7 +163,7 @@
   },"27": {
     "doc": "Типы данных",
     "title": "Типы данных",
-    "content": "Типы данных, упомянутые в этих документах. | array - array ID to be used with array-related functions (actually an integer) | any - any type | bool - boolean (in fact, int: True is 1 and False is 0) | int - integer number | mixed - type depends on exact use case | float - floating point number | ObjectPtr - pointer to a game object (actually an integer) | proc - procedure name (used in register_hook_proc) | string - string (text) value | void - means opcode does not return any value | . ",
+    "content": "Типы данных, упомянутые в документации. | array - идентификатор (ID) массива для использования с функциями, связанные с массивами (ID это фактически целое число) | any - любой тип | bool - логическое значение (фактически это тип int: True равно 1, а False равно 0) | int - целое число | mixed - тип зависит от конкретного случая использования | float - число с плавающей запятой | ObjectPtr - указатель на игровой объект (фактически целое число) | proc - имя процедуры (используется в register_hook_proc) | string - строковое (текстовое) значение | void - означает, что код операции не возвращает никакого значения | . Вы можете узнать тип переменной использую sfall функцию: typeof . ",
     "url": "/sfall-wiki/data-types/",
     "relUrl": "/data-types/"
   },"28": {
