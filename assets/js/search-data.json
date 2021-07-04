@@ -571,7 +571,7 @@
   },"95": {
     "doc": "Документация",
     "title": "Начало работы",
-    "content": "To get started with sfall, first familiarize yourself with new concepts: . | Global scripts and variables. | Arrays and lists. | Hooks. | Data types. | Object and script manipulation. | . Pay special attention to the best practices page. Also, take a look at SSLC features and optimization guide. Next, proceed to discover new functions. They are categorized, use the menu to find the one you need. If you can’t, check uncategorized functions list and sfall macros. Also, there’s search at the top of the page. Note that this is documentation for sfall specifically, not Fallout scripting in general. For vanilla function reference, refer to the wiki. Альтернативаня документация на английском языке: Перейти . ",
+    "content": "To get started with sfall, first familiarize yourself with new concepts: . | Global scripts and variables. | Arrays and lists. | Hooks. | Data types. | Object and script manipulation. | . Pay special attention to the best practices page. Also, take a look at SSLC features and optimization guide. Next, proceed to discover new functions. They are categorized, use the menu to find the one you need. If you can’t, check uncategorized functions list and sfall macros. Also, there’s search at the top of the page. Note that this is documentation for sfall specifically, not Fallout scripting in general. For vanilla function reference, refer to the wiki. Alternative documentation in English: Goto . ",
     "url": "/sfall-wiki/#%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BE-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B",
     "relUrl": "/#начало-работы"
   },"96": {
