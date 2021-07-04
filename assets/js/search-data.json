@@ -175,7 +175,7 @@
   },"29": {
     "doc": "Direct memory access",
     "title": "Подкатегории",
-    "content": ". | Read | Write | Calls | . ",
+    "content": ". | Calls | Read | Write | . ",
     "url": "/sfall-wiki/direct-memory-access/#%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8",
     "relUrl": "/direct-memory-access/#подкатегории"
   },"30": {
@@ -601,7 +601,7 @@
   },"100": {
     "doc": "Interface",
     "title": "Подкатегории",
-    "content": ". | Tags | Windows and images | Outline | Main interface | Inventory | Pip-Boy | Cursor | . ",
+    "content": ". | Cursor | Inventory | Main interface | Outline | Pip-Boy | Tags | Windows and images | . ",
     "url": "/sfall-wiki/interface/#%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8",
     "relUrl": "/interface/#подкатегории"
   },"101": {
@@ -841,7 +841,7 @@
   },"140": {
     "doc": "Функции скриптов",
     "title": "Подкатегории",
-    "content": ". | Stats | Skills | Shaders graphics | Perks and Traits | Maps and Encounters | Sound | Математика | Keyboard and Mouse | Explosions | Animations | Art | Tiles and Paths | Разное | Strings | Interface | Combat | Car | Locks | INI settings | Objects and scripts | . ",
+    "content": ". | Animations | Art | Car | Combat | Explosions | INI settings | Interface | Keyboard and Mouse | Locks | Maps and Encounters | Objects and scripts | Perks and Traits | Shaders graphics | Skills | Sound | Stats | Strings | Tiles and Paths | Математика | Разное | . ",
     "url": "/sfall-wiki/script-functions/#%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8",
     "relUrl": "/script-functions/#подкатегории"
   },"141": {
@@ -985,7 +985,7 @@
   },"164": {
     "doc": "Системные функции",
     "title": "Подкатегории",
-    "content": ". | Direct memory access | Virtual file system | Variables | Sfall version | Метафункции (FuncX) | . ",
+    "content": ". | Direct memory access | Sfall version | Variables | Virtual file system | Метафункции (FuncX) | . ",
     "url": "/sfall-wiki/system-functions/#%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8",
     "relUrl": "/system-functions/#подкатегории"
   },"165": {
