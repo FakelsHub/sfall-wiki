@@ -667,13 +667,13 @@
   },"111": {
     "doc": "Interface",
     "title": "Подкатегории",
-    "content": ". | Windows | Drawing | Tags | Main interface | Cursor | Message box | . ",
+    "content": ". | Windows | Drawing | Tags | Main interface | Cursor | Message window | . ",
     "url": "/sfall-wiki/interface/#%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8",
     "relUrl": "/interface/#подкатегории"
   },"112": {
     "doc": "Interface",
     "title": "Функции",
-    "content": ". | display_stats | get_viewport_x | get_viewport_y | intface_redraw | inventory_redraw | set_viewport_x | set_viewport_y | . display_stats . funcX . void display_stats() . | Updates player’s stats in the inventory display window or on the character screen. | NOTE: works only when the interface window is opened | . get_viewport_x . int get_viewport_x() . get_viewport_y . int get_viewport_y() . intface_redraw . funcX . void intface_redraw(bool winType) . Redraws main game interface. Useful after direct changes to current player weapons or stats to reflect changes. | redraws main game interface, useful to reflect changes after directly changing current player weapons or stats | winType: the type number of the interface window (see WINTYPE_* constants in sfall.h). Pass -1 to redraw all interface windows. | . inventory_redraw . funcX . void inventory_redraw(invSide) . Redraws inventory items list in the inventory/loot/barter screens. Argument invSide specifies which side needs to be redrawn: 0 - the player, 1 - target (container/NPC in loot/barter screens), -1 - both sides (same as without argument). set_viewport_x . void set_viewport_x(int view_x) . set_viewport_y . void set_viewport_y(int view_y) . ",
+    "content": ". | dialog_message | display_stats | get_viewport_x | get_viewport_y | intface_redraw | inventory_redraw | set_viewport_x | set_viewport_y | . dialog_message . funcX . void dialog_message(string text) . Displays a message in the NPC response window in dialog or barter screen. display_stats . funcX . void display_stats() . | Updates player’s stats in the inventory display window or on the character screen. | NOTE: works only when the interface window is opened | . get_viewport_x . int get_viewport_x() . get_viewport_y . int get_viewport_y() . intface_redraw . funcX . void intface_redraw(bool winType) . Redraws main game interface. Useful after direct changes to current player weapons or stats to reflect changes. | redraws main game interface, useful to reflect changes after directly changing current player weapons or stats | winType: the type number of the interface window (see WINTYPE_* constants in sfall.h). Pass -1 to redraw all interface windows. | . inventory_redraw . funcX . void inventory_redraw(invSide) . Redraws inventory items list in the inventory/loot/barter screens. Argument invSide specifies which side needs to be redrawn: 0 - the player, 1 - target (container/NPC in loot/barter screens), -1 - both sides (same as without argument). set_viewport_x . void set_viewport_x(int view_x) . set_viewport_y . void set_viewport_y(int view_y) . ",
     "url": "/sfall-wiki/interface/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/interface/#функции"
   },"113": {
@@ -791,17 +791,17 @@
     "url": "/sfall-wiki/maths/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
     "relUrl": "/maths/#функции"
   },"132": {
-    "doc": "Message box",
-    "title": "Message box",
+    "doc": "Message window",
+    "title": "Message window",
     "content": " ",
-    "url": "/sfall-wiki/message-box/",
-    "relUrl": "/message-box/"
+    "url": "/sfall-wiki/message-window/",
+    "relUrl": "/message-window/"
   },"133": {
-    "doc": "Message box",
+    "doc": "Message window",
     "title": "Функции",
-    "content": ". | create_message_window | dialog_message | message_box | . create_message_window . void create_message_window(string message) . dialog_message . funcX . void dialog_message(string text) . Displays a message in the NPC response window in dialog or barter screen. message_box . int sfall_func4(\"message_box\", string message, int flags, int color1, int color2) . Creates a dialog box with text and returns the result of pressing the button: 0 - No (Escape), 1 - Yes/Done (Enter). Returns -1 if for some reason the dialog box cannot be created. - message: the text in the dialog box. Use the `\\n` control character to move text to a new line (example: \"Hello\\nWorld!\") optional arguments: - flags: mode flags (see `MSGBOX_*` constants in define_extra.h). Pass -1 to skip setting the flags (default flags are NORMAL and YESNO) - color1/color2: the color index in the game palette. `color1` sets the text color for the first line, and `color2` for all subsequent lines of text (default color is 145) . ",
-    "url": "/sfall-wiki/message-box/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
-    "relUrl": "/message-box/#функции"
+    "content": ". | create_message_window | message_box | . create_message_window . void create_message_window(string message) . message_box . funcX . int sfall_func4(\"message_box\", string message, int flags, int color1, int color2) . Creates a dialog box with text and returns the result of pressing the button: 0 - No (Escape), 1 - Yes/Done (Enter). Returns -1 if for some reason the dialog box cannot be created. | message: the text in the dialog box. Use the \\n control character to move text to a new line (example: “Hello\\nWorld!”) optional arguments: | flags: mode flags (see MSGBOX_* constants in define_extra.h). Pass -1 to skip setting the flags (default flags are NORMAL and YESNO) | color1/color2: the color index in the game palette. color1 sets the text color for the first line, and color2 for all subsequent lines of text (default color is 145) | . ",
+    "url": "/sfall-wiki/message-window/#%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+    "relUrl": "/message-window/#функции"
   },"134": {
     "doc": "Misc (Разное)",
     "title": "Misc (Разное)",
