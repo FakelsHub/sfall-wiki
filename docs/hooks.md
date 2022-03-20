@@ -7,17 +7,18 @@ permalink: /hooks/
 
 # Hooks
 
-Hook scripts are specially named scripts that are run by sfall at specific points to allow mods to override normally hardcoded behaviour in a more flexible way than sfall's normal ini configuration.
+Скрипты крючки - это специально скрипты, которые запускаются в sfall в определенных точках игровой механике, чтобы позволить модам переопределять жестко запрограммированное поведение движка, более гибким способом, чем через обычную конфигурацию ini файлов sfall.
 
-In addition to the bit of code it overrides, the script will be run once when first loaded and again at each player reload to allow for setup. Hook scripts have access to a set of arguments supplied to sfall, but aren't required to use them all. They also return one or more values, but again they're optional, and you only need to return a value if you want to override the default.
+В дополнение к коду скрипта который он переопределяет, скрипт будет запускаться каждый раз при начале игры, а также при каждой загрузке сохранения игры, чтобы обеспечить настройку необхоимыъх параметров скрипта.
+Hook скрипты имеют доступ к набору аргументов, предоставленных sfall, но вам не обязательно использовать их все. Скрипты также возвращают одно или несколько значений в код игрового движка, но опять же это необязательно, вам нужно возвращать значение только в том случае, если вы хотите переопределить значение по умолчанию.
 
-See [hook types]({{ site.baseurl }}/hook-types/) and hook [functions reference]({{ site.baseurl }}/hook-functions/) for details.
+Смотрите [типы крючков]({{ site.baseurl }}/hook-types/) и [функции крючков]({{ site.baseurl }}/hook-functions/) для детальной информации.
 
-## Hooks compatibility
+## Hooks совметисость
 
-To aid in mods compatibility, avoid using `hs_xxx` .int scripts. Instead it is recommended to use a normal global script combined with [register_hook_proc]({{ site.baseurl }}/hook-functions/#register_hook_proc) or [register_hook]({{ site.baseurl }}/hook-functions/#register_hook).
+Чтобы обеспечить совместимость с модами, избегайте использования скриптов `hs_xxx`.int. Вместо этого рекомендуется использовать обычный глобальный скрипт в сочетании с функциями [register_hook_proc]({{ site.baseurl }}/hook-functions/#register_hook_proc) или [register_hook]({{ site.baseurl }}/hook-functions/#register_hook).
 
-Example setup for a hook-script based mod:
+Пример реализации кода скрипта-крючка для мода:
 
 ```js
 procedure tohit_hook_handler begin
